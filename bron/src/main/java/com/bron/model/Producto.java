@@ -3,6 +3,8 @@ package com.bron.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,8 +26,9 @@ public class Producto {
     @Column(name = "GENERO", length = 45)
 	private String genero;
     
-    @Column(name = "MARCA", length = 45)
-	private String marca;
+    @ManyToOne()
+    @JoinColumn(name = "CODIGO_CATEGORIA", nullable = true)
+    private Categoria categoria;
     
     @Column(name = "PRECIO")
 	private double precio;
@@ -37,15 +40,15 @@ public class Producto {
 		super();
 	}
 
-	public Producto(String codigoProducto, String modelo, int talla, String color, String genero, String marca,
-			double precio, int cantidad) {
+	public Producto(String codigoProducto, String modelo, int talla, String color, String genero,
+			Categoria categoria, double precio, int cantidad) {
 		super();
 		this.codigoProducto = codigoProducto;
 		this.modelo = modelo;
 		this.talla = talla;
 		this.color = color;
 		this.genero = genero;
-		this.marca = marca;
+		this.categoria = categoria;
 		this.precio = precio;
 		this.cantidad = cantidad;
 	}
@@ -90,12 +93,12 @@ public class Producto {
 		this.genero = genero;
 	}
 
-	public String getMarca() {
-		return marca;
+	public Categoria getCategoria() {
+		return categoria;
 	}
 
-	public void setMarca(String marca) {
-		this.marca = marca;
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 
 	public double getPrecio() {
@@ -113,5 +116,5 @@ public class Producto {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
-    
+
 }

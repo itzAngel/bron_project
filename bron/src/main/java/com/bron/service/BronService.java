@@ -2,6 +2,7 @@ package com.bron.service;
 
 import java.util.List;
 
+import com.bron.model.Categoria;
 import com.bron.model.Cliente;
 import com.bron.model.Producto;
 import com.bron.model.Usuario;
@@ -36,4 +37,14 @@ public interface BronService {
 	Usuario editUsuario(Usuario u);
 
 	Usuario deleteUsuario(String id);
+	
+	List<Categoria> listarCategoria();
+
+	Categoria listarIdCategoria(String id);
+
+	Categoria addCategoria(Categoria u);
+
+	Categoria editCategoria(Categoria u);
+
+	Categoria deleteCategoria(String id);
 }

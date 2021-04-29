@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bron.dao.CategoriaRepository;
 import com.bron.dao.ClienteRepository;
 import com.bron.dao.ProductoRepository;
 import com.bron.dao.UsuarioRepository;
+import com.bron.model.Categoria;
 import com.bron.model.Cliente;
 import com.bron.model.Producto;
 import com.bron.model.Usuario;
@@ -101,6 +103,37 @@ public class BronServiceImpl implements BronService{
 	public Usuario deleteUsuario(String id) {
 		Usuario agente = listarIdUsuario(id);
 		usuarioRepository.delete(agente);
+		return agente;
+	}
+	
+	
+	@Autowired
+	private CategoriaRepository categoriaRepository;
+	
+	@Override
+	public List<Categoria> listarCategoria() {
+		return categoriaRepository.findAll();
+	}
+
+	@Override
+	public Categoria listarIdCategoria(String id) {
+		return categoriaRepository.findById(id);
+	}
+
+	@Override
+	public Categoria addCategoria(Categoria u) {
+		return categoriaRepository.save(u);
+	}
+
+	@Override
+	public Categoria editCategoria(Categoria u) {
+		return categoriaRepository.save(u);
+	}
+
+	@Override
+	public Categoria deleteCategoria(String id) {
+		Categoria agente = listarIdCategoria(id);
+		categoriaRepository.delete(agente);
 		return agente;
 	}
 }
