@@ -38,32 +38,32 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Agregar Producto
                             </a>
                             
-                            <a class="nav-link" href="../mi_dashboard/listadoProductos.html">
+                            <a class="nav-link" href="../mi_dashboard/listadoProductos.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Listar Productos
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/editarProductos.html">
+                            <a class="nav-link" href="../mi_dashboard/editarProductos.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Editar Productos
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/agregarCategoria.html">
+                            <a class="nav-link" href="../mi_dashboard/agregarCategoria.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Agregar Categoría
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/listadoCategoria.html">
+                            <a class="nav-link" href="../mi_dashboard/listadoCategoria.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Listar Categoría
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/editarCategoría.html">
+                            <a class="nav-link" href="../mi_dashboard/editarCategoría.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Editar Categoría
                             </a>

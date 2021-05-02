@@ -38,35 +38,36 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Agregar Producto
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/listadoProductos.html">
+                            <a class="nav-link" href="../mi_dashboard/listadoProductos.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Listar Productos
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/editarProductos.html">
+                            <a class="nav-link" href="../mi_dashboard/editarProductos.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Editar Productos
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/agregarCategoria.html">
+                            <a class="nav-link" href="../mi_dashboard/agregarCategoria.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Agregar Categoría
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/listadoCategoria.html">
+                            <a class="nav-link" href="../mi_dashboard/listadoCategoria.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Listar Categoría
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/editarCategoría.html">
+                            <a class="nav-link" href="../mi_dashboard/editarCategoría.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Editar Categoría
                             </a>
+                            
 
 
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -123,25 +124,99 @@
                 <div class="container">
                     <div class="card mt-4">
                         <div class="card-header">
-                          Editar Producto
+                          Agregar Producto
                         </div>
+
+                        <form action="proceso_guardado.php" class="form-register" method="POST" enctype="multipart/form-data">
+                        
+                        
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <input type="text" placeholder="Editar ID categoría" class="form-control" disabled>
+                                    <input type="text" placeholder="Ingrese código" class="form-control" name="codigo">
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input type="text" placeholder="Editar Nombre Categoría" class="form-control">
+                                    <input type="text" placeholder="Ingrese modelo" class="form-control" name="modelo" >
                                 </div>
                             </div>
 
+                            <br>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="number" placeholder="Elija Talla" class="form-control" min="38" max="43" name="talla">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" placeholder="Ingrese Color" class="form-control" name="color">
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="row">
+                                
+                                <div class="col-md-6 mb-3">
+
+                                    <select name="genero" class="form-control" id="genero">
+                                        <option value="value1" selected >Seleccione Género</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
+                                      </select>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+
+                                    <select name="categoria" class="form-control" id="categoria">
+                                        <option value="0" selected >Seleccione Categoría</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+
+                                    <input type="number" placeholder="Ingrese Precio" class="form-control" name="precio">
+                                      
+  
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="number" placeholder="Ingrese Cantidad" class="form-control" name="cantidad">
+                                </div>
+                            </div>
+
+                            <br>
+
+                                <center>
+                                    <div class="row">
+                                   
+                                        <div class="col-xl">
+                                       
+                                            <input type="file" required name="imagen" class="form__file">
+                                            <input type="submit" value="Aceptar" class="form__submit">
+                                       
+                                        </div> 
+
+                                    </div>
+                                </center>
+                                
+                                <br>
+                            
+
                             <div class="row">
                                 <div class="col-12 text-center">
-                                    <button type="button" class="btn btn-danger">Editar Categoría</button>
+                                    <button type="button" class="btn btn-danger">Guardar Producto</button>
                                 </div>
                             </div>
 
                         </div>
+
+                        </form>
                       </div>
                 </div>
 

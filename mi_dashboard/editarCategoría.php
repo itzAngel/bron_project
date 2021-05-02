@@ -38,35 +38,36 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Agregar Producto
                             </a>
-                            
-                            <a class="nav-link" href="../mi_dashboard/listadoProductos.html">
+
+                            <a class="nav-link" href="../mi_dashboard/listadoProductos.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Listar Productos
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/editarProductos.html">
+                            <a class="nav-link" href="../mi_dashboard/editarProductos.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Editar Productos
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/agregarCategoria.html">
+                            <a class="nav-link" href="../mi_dashboard/agregarCategoria.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Agregar Categoría
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/listadoCategoria.html">
+                            <a class="nav-link" href="../mi_dashboard/listadoCategoria.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Listar Categoría
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/editarCategoría.html">
+                            <a class="nav-link" href="../mi_dashboard/editarCategoría.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Editar Categoría
                             </a>
+
 
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
@@ -120,69 +121,28 @@
                
                 <!--Formulario-->
                 <div class="container">
-                    <div class="row mt-4">
-                        <table class="table caption-top ">
-                            <caption>Lista de Productos</caption>
-                            <thead class="table-dark">
-                              <tr>
-                                <th scope="col">Código</th>
-                                <th scope="col">Modelo</th>
-                                <th scope="col">Talla</th>
-                                <th scope="col">Color</th>
-                                <th scope="col">Género</th>
-                                <th scope="col">Categoría</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Opciones</th>
-                              </tr>
-                            </thead>
-                            <tbody>
+                    <div class="card mt-4">
+                        <div class="card-header">
+                          Editar Producto
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" placeholder="Editar ID categoría" class="form-control" disabled>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" placeholder="Editar Nombre Categoría" class="form-control">
+                                </div>
+                            </div>
 
-                              <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td><button type="button" class="btn btn-primary"><a href="../mi_dashboard/editarProductos.html" style="color: white;">&nbsp;Editar&nbsp;</a></button>&nbsp;<button type="button" class="btn btn-danger">Eliminar</button></td>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <button type="button" class="btn btn-danger">Editar Categoría</button>
+                                </div>
+                            </div>
 
-                              </tr>
-                              <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td><button type="button" class="btn btn-primary"><a href="../mi_dashboard/editarProductos.html" style="color: white;">&nbsp;Editar&nbsp;</a></button>&nbsp;<button type="button" class="btn btn-danger">Eliminar</button></td>
-                              </tr>
-
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td><button type="button" class="btn btn-primary"><a href="../mi_dashboard/editarProductos.html" style="color: white;">&nbsp;Editar&nbsp;</a></button>&nbsp;<button type="button" class="btn btn-danger">Eliminar</button></td>
-                              </tr>
-
-                            </tbody>
-                          </table>
-                    </div>
-
-                    <div class="row">
-
-                    </div>
-
-                      
+                        </div>
+                      </div>
                 </div>
 
                 <footer class="py-4 bg-light mt-auto">
