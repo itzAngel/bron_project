@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `bron`.`Productos` (
   PRIMARY KEY (`CODIGOPRODUCTO`))
 ENGINE = InnoDB;
 
-
+alter table Productos add Imagen longblob null;
 -- -----------------------------------------------------
 -- Table `mydb`.`Usuario`
 -- -----------------------------------------------------
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `bron`.`Categoria` (
   PRIMARY KEY (`CODIGO_CATEGORIA`))
 ENGINE = InnoDB;
 
-ALTER TABLE Productos ADD CONSTRAINT FK_CODIGO_CATEGORIA FOREIGN KEY (CODIGO_CATEGORIA) REFERENCES Productos(CODIGO_CATEGORIA);
+ALTER TABLE Productos ADD CONSTRAINT FK_CODIGO_CATEGORIA FOREIGN KEY (CODIGO_CATEGORIA) REFERENCES Categoria(CODIGO_CATEGORIA);
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
@@ -85,9 +85,11 @@ insert into Usuario (DNI_USUARIO, NOMBRES, APELLIDOS, EMAIL, PRIVILEGIO, ID_USUA
 insert into Usuario (DNI_USUARIO, NOMBRES, APELLIDOS, EMAIL, PRIVILEGIO, ID_USUARIO, CONTRASENA) values (54309330, 'Susanne', 'Yepiskov', 'syepiskov3@nifty.com', '1', '48-547-8415', 'jLk3JiK4h');
 insert into Usuario (DNI_USUARIO, NOMBRES, APELLIDOS, EMAIL, PRIVILEGIO, ID_USUARIO, CONTRASENA) values (51571629, 'Steffane', 'Feehely', 'sfeehely4@hhs.gov', '0', '01-945-6520', 'jCmHmPXlb');
 
-
-insert into Productos (CODIGOPRODUCTO, MODELO, TALLA, COLOR, GENERO, MARCA, PRECIO, CANTIDAD) values (74801988, 'primis in faucibus', 46, 'kvalance1@jalbum.net', 'Male', 'Jeep', 0, 55);
+select * from productos;
+insert into Productos (CODIGOPRODUCTO, MODELO, TALLA, COLOR, GENERO, CODIGO_CATEGORIA, PRECIO, CANTIDAD,Imagen) values (74801988, 'primis in faucibus', 43, 'Azul', 'Male', '1',120, 55,null);
 insert into Productos (CODIGOPRODUCTO, MODELO, TALLA, COLOR, GENERO, MARCA, PRECIO, CANTIDAD) values (7266540, 'non mauris morbi', 98, 'gcomber2@msn.com', 'Genderfluid', 'Land Rover', 0, 22);
 insert into Productos (CODIGOPRODUCTO, MODELO, TALLA, COLOR, GENERO, MARCA, PRECIO, CANTIDAD) values (47832017, 'quis odio consequat', 2, 'skearney3@infoseek.co.jp', 'Male', 'Volkswagen', 0, 23);
 insert into Productos (CODIGOPRODUCTO, MODELO, TALLA, COLOR, GENERO, MARCA, PRECIO, CANTIDAD) values (96254949, 'dui vel sem sed sagittis', 77, 'rwillmett6@newyorker.com', 'Genderqueer', 'BMW', 0, 86);
 insert into Productos (CODIGOPRODUCTO, MODELO, TALLA, COLOR, GENERO, MARCA, PRECIO, CANTIDAD) values (29654427, 'a odio', 1, 'lanthoney8@noaa.gov', 'Agender', 'Mercedes-Benz', 0, 58);
+
+insert into Categoria(CODIGO_CATEGORIA,CATEGORIA) values ('1','sandalias');

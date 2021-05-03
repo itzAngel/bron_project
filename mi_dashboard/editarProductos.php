@@ -38,32 +38,32 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Agregar Producto
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/listadoProductos.html">
+                            <a class="nav-link" href="../mi_dashboard/listadoProductos.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Listar Productos
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/editarProductos.html">
+                            <a class="nav-link" href="../mi_dashboard/editarProductos.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Editar Productos
                             </a>
 
-                            <a class="nav-link" href="../mi_dashboard/agregarCategoria.html">
+                            <a class="nav-link" href="../mi_dashboard/agregarCategoria.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Agregar Categoría
                             </a>
-                            
-                            <a class="nav-link" href="../mi_dashboard/listadoCategoria.html">
+
+                            <a class="nav-link" href="../mi_dashboard/listadoCategoria.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Listar Categoría
                             </a>
-
-                            <a class="nav-link" href="../mi_dashboard/editarCategoría.html">
+                            
+                            <a class="nav-link" href="../mi_dashboard/editarCategoría.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Editar Categoría
                             </a>
@@ -123,31 +123,70 @@
                 <div class="container">
                     <div class="card mt-4">
                         <div class="card-header">
-                          Agregar Categoría
+                          Editar Producto
                         </div>
                         <div class="card-body">
-
-                                <div class="row" style="justify-content: center;">
-                                    <div class="col-md-6 mb-3">
-                                        <input type="text" placeholder="Ingrese ID Categoría" class="form-control">
-                                    </div>
-                                </div> 
-                        
-                            <br>
-
-                            <div class="row" style="justify-content: center;">
-
+                            <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <input type="text" placeholder="Ingrese Nombre de Categoría" class="form-control">
+                                    <input type="text" placeholder="Editar código" class="form-control" disabled>
                                 </div>
-
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" placeholder="Editar modelo" class="form-control">
+                                </div>
                             </div>
 
                             <br>
 
                             <div class="row">
-                                <div class="col-12 text-center" >
-                                    <button type="button" class="btn btn-danger">Guardar Categoría</button>
+                                <div class="col-md-6 mb-3">
+                                    <input type="number" placeholder="Editar Talla" class="form-control" min="38" max="43">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" placeholder="Editar Color" class="form-control">
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="row">
+                                
+                                <div class="col-md-6 mb-3">
+                                    <select name="select" class="form-control">
+                                        <option value="value1" selected>Editar Género</option>
+                                        <option value="value2">Masculino</option>
+                                        <option value="value3">Femenino</option>
+                                      </select>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <select name="select" class="form-control">
+                                        <option value="value1" selected >Seleccione Categoría</option>
+                                        <option value="value2">Botines</option>
+                                        <option value="value3">Casuales</option>
+                                        <option value="value4">Sandalias</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+
+                                    <input type="number" placeholder="Editar Precio" class="form-control">
+                                      
+  
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="number" placeholder="Editar Cantidad" class="form-control">
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <button type="button" class="btn btn-danger">Editar Producto</button>
                                 </div>
                             </div>
 
