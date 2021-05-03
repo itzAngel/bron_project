@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header">
+            Agregar Categoría
+        </div>
+        <div class="card-body">
+            <div class="row" style="justify-content: center;">
+                <div class="col-md-6 mb-3">
+                    <input type="text" placeholder="Ingrese ID Categoría" class="form-control" name="codigoCategoria" #codigoCategoria="ngModel" [(ngModel)]="categoria.codigoCategoria">
+                </div>
+            </div>
+            <br>
+            <div class="row" style="justify-content: center;">
+                <div class="col-md-6 mb-3">
+                    <input type="text" placeholder="Ingrese Nombre de Categoría" class="form-control" name="category" #category="ngModel" [(ngModel)]="categoria.categoria">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button type="button" class="btn btn-danger" (click)="Guardar(categoria)">Guardar Categoría</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

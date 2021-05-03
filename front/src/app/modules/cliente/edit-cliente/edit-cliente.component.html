@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header">
+            Editar Cliente
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="text" placeholder="Editar dni Cliente" class="form-control" name="dniCliente" #dniCliente="ngModel" [(ngModel)]="cliente.dniCliente" disabled>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="text" placeholder="Editar Nombre" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="cliente.nombre">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="text" placeholder="Editar apellido" class="form-control" name="apellido" #apellido="ngModel" [(ngModel)]="cliente.apellido">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="text" placeholder="Editar telefeno" class="form-control" name="telefeno" #telefeno="ngModel" [(ngModel)]="cliente.telefeno">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="text" placeholder="Editar provincia" class="form-control" name="provincia" #provincia="ngModel" [(ngModel)]="cliente.provincia">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="text" placeholder="Editar distrito" class="form-control" name="distrito" #distrito="ngModel" [(ngModel)]="cliente.distrito">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="text" placeholder="Editar direccion" class="form-control" name="direccion" #direccion="ngModel" [(ngModel)]="cliente.direccion">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="text" placeholder="Editar idCliente" class="form-control" name="idCliente" #idCliente="ngModel" [(ngModel)]="cliente.idCliente">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <input type="text" placeholder="Editar contrasena" class="form-control" name="contrasena" #contrasena="ngModel" [(ngModel)]="cliente.contrasena">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button type="button" class="btn btn-danger" (click)="Actualizar()">Editar Cliente</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

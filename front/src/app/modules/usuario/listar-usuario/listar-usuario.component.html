@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row mt-4">
+        <table class="table caption-top ">
+            <caption>Lista de Clientes</caption>
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">DNI Usuario</th>
+                    <th scope="col">Nombre Usuario</th>
+                    <th scope="col">Apellido Usuario</th>
+                    <th scope="col">Email Usuario</th>
+                    <th scope="col">Privilegio Usuario</th>
+                    <th scope="col">Opciones</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let usuario of usuarios">
+                <tr>
+                    <th scope="row">{{usuario.dniUsuario}} </th>
+                    <td>{{usuario.nombre}}</td>
+                    <td>{{usuario.apellido}}</td>
+                    <td>{{usuario.email}}</td>
+                    <td *ngIf="usuario.privilegio == 0">Jefe de sector/Asistente</td>
+                    <td *ngIf="usuario.privilegio == 1">Administrador</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" (click)="Editar(usuario)">Editar</button> &nbsp;
+                        <button type="button" class="btn btn-danger" (click)="Eliminar(usuario)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
