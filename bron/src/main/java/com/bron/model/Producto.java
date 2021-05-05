@@ -1,27 +1,32 @@
 package com.bron.model;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "productos")
-public class Producto {
+public class Producto implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
     @Column(name = "CODIGOPRODUCTO", length = 45)
     private String codigoProducto;
     
     @Column(name = "MODELO", length = 45)
 	private String modelo;
-    
-    @Column(name = "TALLA")
-	private int talla;
-
-    @Column(name = "COLOR", length = 45)
-	private String color;
 
     @Column(name = "GENERO", length = 45)
 	private String genero;
@@ -33,24 +38,22 @@ public class Producto {
     @Column(name = "PRECIO")
 	private double precio;
     
-    @Column(name = "CANTIDAD")
-	private int cantidad;
+    @OneToMany(mappedBy = "producto",cascade = CascadeType.ALL)
+    private List<DetalleProducto> listaDetalleProducto = new ArrayList<>();
 
 	public Producto() {
 		super();
 	}
 
-	public Producto(String codigoProducto, String modelo, int talla, String color, String genero,
-			Categoria categoria, double precio, int cantidad) {
+	public Producto(String codigoProducto, String modelo, String genero, Categoria categoria, double precio,
+			List<DetalleProducto> listaDetalleProducto) {
 		super();
 		this.codigoProducto = codigoProducto;
 		this.modelo = modelo;
-		this.talla = talla;
-		this.color = color;
 		this.genero = genero;
 		this.categoria = categoria;
 		this.precio = precio;
-		this.cantidad = cantidad;
+		this.listaDetalleProducto = listaDetalleProducto;
 	}
 
 	public String getCodigoProducto() {
@@ -67,22 +70,6 @@ public class Producto {
 
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
-	}
-
-	public int getTalla() {
-		return talla;
-	}
-
-	public void setTalla(int talla) {
-		this.talla = talla;
-	}
-
-	public String getColor() {
-		return color;
-	}
-
-	public void setColor(String color) {
-		this.color = color;
 	}
 
 	public String getGenero() {
@@ -107,14 +94,6 @@ public class Producto {
 
 	public void setPrecio(double precio) {
 		this.precio = precio;
-	}
-
-	public int getCantidad() {
-		return cantidad;
-	}
-
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
 	}
 
 }

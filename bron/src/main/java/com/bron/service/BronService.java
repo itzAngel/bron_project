@@ -4,10 +4,13 @@ import java.util.List;
 
 import com.bron.model.Categoria;
 import com.bron.model.Cliente;
+import com.bron.model.DetalleProducto;
 import com.bron.model.Producto;
 import com.bron.model.Usuario;
 
 public interface BronService {
+	
+	/* Cliente */
 	List<Cliente> listarCliente();
 
 	Cliente listarIdCliente(String id);
@@ -18,16 +21,9 @@ public interface BronService {
 
 	Cliente deleteCliente(String id);
 	
-	List<Producto> listarProducto();
-
-	Producto listarIdProducto(String id);
-
-	Producto addProducto(Producto u);
-
-	Producto editProducto(Producto u);
-
-	Producto deleteProducto(String id);
 	
+	
+	/* Usuario */
 	List<Usuario> listarUsuario();
 
 	Usuario listarIdUsuario(String id);
@@ -38,6 +34,9 @@ public interface BronService {
 
 	Usuario deleteUsuario(String id);
 	
+	
+	
+	/* Categoria */
 	List<Categoria> listarCategoria();
 
 	Categoria listarIdCategoria(String id);
@@ -47,4 +46,30 @@ public interface BronService {
 	Categoria editCategoria(Categoria u);
 
 	Categoria deleteCategoria(String id);
+	
+	
+	
+	/* Producto */
+	List<Producto> listarProducto();
+
+	Producto listarIdProducto(String id);
+
+	Producto addProducto(Producto u);
+
+	Producto editProducto(Producto u);
+
+	Producto deleteProducto(String id);
+
+	
+	
+	/*DetalleProducto */
+	List<DetalleProducto> listarDetalleProducto();
+
+	DetalleProducto listarIdDetalleProducto(String id);
+
+	DetalleProducto addDetalleProducto(DetalleProducto u);
+
+	DetalleProducto editDetalleProducto(DetalleProducto u);
+
+	DetalleProducto deleteDetalleProducto(String id);
 }

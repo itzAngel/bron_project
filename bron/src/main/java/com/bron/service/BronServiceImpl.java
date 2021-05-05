@@ -7,15 +7,23 @@ import org.springframework.stereotype.Service;
 
 import com.bron.dao.CategoriaRepository;
 import com.bron.dao.ClienteRepository;
+import com.bron.dao.DetalleProductoRepository;
 import com.bron.dao.ProductoRepository;
 import com.bron.dao.UsuarioRepository;
 import com.bron.model.Categoria;
 import com.bron.model.Cliente;
+import com.bron.model.DetalleProducto;
 import com.bron.model.Producto;
 import com.bron.model.Usuario;
 @Service
 public class BronServiceImpl implements BronService{
-
+	
+	
+	/* 
+	 * 
+	 * Cliente 
+	 * 
+	 * */
 	@Autowired
 	private ClienteRepository clienteRepository;
 	
@@ -46,36 +54,12 @@ public class BronServiceImpl implements BronService{
 		return agente;
 	}
 	
-	@Autowired
-	private ProductoRepository productoRepository;
 	
-	@Override
-	public List<Producto> listarProducto() {
-		return productoRepository.findAll();
-	}
-
-	@Override
-	public Producto listarIdProducto(String id) {
-		return productoRepository.findById(id);
-	}
-
-	@Override
-	public Producto addProducto(Producto u) {
-		return productoRepository.save(u);
-	}
-
-	@Override
-	public Producto editProducto(Producto u) {
-		return productoRepository.save(u);
-	}
-
-	@Override
-	public Producto deleteProducto(String id) {
-		Producto agente = listarIdProducto(id);
-		productoRepository.delete(agente);
-		return agente;
-	}
-	
+	/* 
+	 * 
+	 * Usuario 
+	 * 
+	 * */
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
@@ -107,6 +91,12 @@ public class BronServiceImpl implements BronService{
 	}
 	
 	
+	
+	/* 
+	 * 
+	 * Categoria 
+	 * 
+	 * */
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 	
@@ -134,6 +124,80 @@ public class BronServiceImpl implements BronService{
 	public Categoria deleteCategoria(String id) {
 		Categoria agente = listarIdCategoria(id);
 		categoriaRepository.delete(agente);
+		return agente;
+	}
+	
+	
+	
+	/* 
+	 * 
+	 * Producto 
+	 * 
+	 * */
+	@Autowired
+	private ProductoRepository productoRepository;
+	
+	@Override
+	public List<Producto> listarProducto() {
+		return productoRepository.findAll();
+	}
+
+	@Override
+	public Producto listarIdProducto(String id) {
+		return productoRepository.findById(id);
+	}
+
+	@Override
+	public Producto addProducto(Producto u) {
+		return productoRepository.save(u);
+	}
+
+	@Override
+	public Producto editProducto(Producto u) {
+		return productoRepository.save(u);
+	}
+
+	@Override
+	public Producto deleteProducto(String id) {
+		Producto agente = listarIdProducto(id);
+		productoRepository.delete(agente);
+		return agente;
+	}
+	
+	
+	
+	/* 
+	 * 
+	 * DetalleProducto 
+	 * 
+	 * */
+	@Autowired
+	private DetalleProductoRepository detalleProductoRepository;
+	
+	@Override
+	public List<DetalleProducto> listarDetalleProducto() {
+		return detalleProductoRepository.findAll();
+	}
+
+	@Override
+	public DetalleProducto listarIdDetalleProducto(String id) {
+		return detalleProductoRepository.findById(id);
+	}
+
+	@Override
+	public DetalleProducto addDetalleProducto(DetalleProducto u) {
+		return detalleProductoRepository.save(u);
+	}
+
+	@Override
+	public DetalleProducto editDetalleProducto(DetalleProducto u) {
+		return detalleProductoRepository.save(u);
+	}
+
+	@Override
+	public DetalleProducto deleteDetalleProducto(String id) {
+		DetalleProducto agente = listarIdDetalleProducto(id);
+		detalleProductoRepository.delete(agente);
 		return agente;
 	}
 }
