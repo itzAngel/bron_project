@@ -79,12 +79,14 @@ ENGINE = InnoDB;
 -- Table `bd`.`Productos_Detalle`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bron`.`Detalle_Productos` (
+  `CODIGODETALLE` VARCHAR(45) NOT NULL,
   `CODIGOPRODUCTO` VARCHAR(45) NOT NULL,
   `TALLA` INT NULL,
   `COLOR` VARCHAR(45) NULL,
   `DESCRIPCION` VARCHAR(45) NOT NULL,
   `CANTIDAD` INT NULL,  
-  FOREIGN KEY (CODIGOPRODUCTO) REFERENCES Productos(CODIGOPRODUCTO))
+  PRIMARY KEY (`CODIGODETALLE`),
+  FOREIGN KEY (CODIGOPRODUCTO) REFERENCES Productos(CODIGOPRODUCTO));
 
 -- -----------------------------------------------------
 -- DATA 1
@@ -133,10 +135,10 @@ insert into Productos (CODIGOPRODUCTO, MODELO,   GENERO, CODIGO_CATEGORIA, PRECI
 insert into Productos (CODIGOPRODUCTO, MODELO,   GENERO, CODIGO_CATEGORIA, PRECIO) values (96254949, 'dui vel sem sed sagittis',   'Genderqueer', 40015727, 0);
 insert into Productos (CODIGOPRODUCTO, MODELO,   GENERO, CODIGO_CATEGORIA, PRECIO) values (29654427, 'a odio',   'Agender', 67507082, 0);
 
-insert into Detalle_Productos (CODIGOPRODUCTO,TALLA, COLOR,DESCRIPCION,CANTIDAD) values (74801988, 48, 'kvalance1@jalbum.net','Zapato suelto', 10);
-insert into Detalle_Productos (CODIGOPRODUCTO,TALLA,COLOR,DESCRIPCION,CANTIDAD) values (74801988, 44, 'gcomber2@msn.com','Zapato no suelto', 30);
-insert into Detalle_Productos (CODIGOPRODUCTO,TALLA,COLOR,DESCRIPCION,CANTIDAD) values (74801988, 42, 'skearney3@infoseek.co.jp','Zapato soltado', 50);
-insert into Detalle_Productos (CODIGOPRODUCTO,TALLA,COLOR,DESCRIPCION,CANTIDAD) values (74801988, 40, 'rwillmett6@newyorker.com', 'Zapato', 20);
+insert into Detalle_Productos (CODIGODETALLE,CODIGOPRODUCTO,TALLA,COLOR,DESCRIPCION,CANTIDAD) values (74747472,74801988, 48, 'kvalance1@jalbum.net','Zapato suelto', 10);
+insert into Detalle_Productos (CODIGODETALLE,CODIGOPRODUCTO,TALLA,COLOR,DESCRIPCION,CANTIDAD) values (74747473,74801988, 44, 'gcomber2@msn.com','Zapato no suelto', 30);
+insert into Detalle_Productos (CODIGODETALLE,CODIGOPRODUCTO,TALLA,COLOR,DESCRIPCION,CANTIDAD) values (74747474,74801988, 42, 'skearney3@infoseek.co.jp','Zapato soltado', 50);
+insert into Detalle_Productos (CODIGODETALLE,CODIGOPRODUCTO,TALLA,COLOR,DESCRIPCION,CANTIDAD) values (74747475,74801988, 40, 'rwillmett6@newyorker.com', 'Zapato', 20);
 
 
 select sum(cantidad) from Detalle_Productos;
