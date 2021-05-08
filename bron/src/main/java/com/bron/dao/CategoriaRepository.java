@@ -6,11 +6,11 @@ import org.springframework.data.repository.Repository;
 
 import com.bron.model.Categoria;
 
-public interface CategoriaRepository extends Repository<Categoria, String>{
-	
+public interface CategoriaRepository extends Repository<Categoria, Integer>{
+		
 	List<Categoria> findAll();
 
-	Categoria findById(String id);
+	Categoria findById(int id);
 
 	Categoria save(Categoria p);
 

@@ -34,7 +34,7 @@ public class CategoriaController {
 	}
 	
 	@GetMapping("/{id}")
-	public Categoria listarId(@PathVariable("id")String id){
+	public Categoria listarId(@PathVariable("id")int id){
 		return service.listarIdCategoria(id);
 	}
 	@PutMapping
@@ -42,7 +42,7 @@ public class CategoriaController {
 		return service.editCategoria(p);
 	}
 	@DeleteMapping("/{id}")
-	public Categoria delete(@PathVariable("id")String id) {
+	public Categoria delete(@PathVariable("id")int id) {
 		return service.deleteCategoria(id);
 	}
 }

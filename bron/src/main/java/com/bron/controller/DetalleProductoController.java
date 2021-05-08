@@ -34,7 +34,7 @@ public class DetalleProductoController {
 	}
 	
 	@GetMapping("/{id}")
-	public DetalleProducto listarId(@PathVariable("id")String id){
+	public DetalleProducto listarId(@PathVariable("id")int id){
 		return service.listarIdDetalleProducto(id);
 	}
 	@PutMapping
@@ -42,7 +42,7 @@ public class DetalleProductoController {
 		return service.editDetalleProducto(p);
 	}
 	@DeleteMapping("/{id}")
-	public DetalleProducto delete(@PathVariable("id")String id) {
+	public DetalleProducto delete(@PathVariable("id")int id) {
 		return service.deleteDetalleProducto(id);
 	}
 }

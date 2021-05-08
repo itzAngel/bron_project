@@ -1,72 +1,54 @@
 package com.bron.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "cliente")
-public class Cliente implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class Cliente{
 
 	@Id
-    @Column(name = "DNI_CLIENTE", length = 8)
-    private String dniCliente;
-    
-    @Column(name = "NOMBRE", length = 45)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id_cliente;
+	@Column
+    private String dni_cliente;
+	@Column
 	private String nombre;
-    
-    @Column(name = "APELLIDO", length = 45)
+	@Column
 	private String apellido;
-
-    @Column(name = "TELEFONO", length = 45)
-	private String telefeno;
-
-    @Column(name = "PROVINCIA", length = 45)
+	@Column
+	private String telefono;
+	@Column
 	private String provincia;
-    
-    @Column(name = "DISTRITO", length = 45)
+	@Column
 	private String distrito;
-    
-    @Column(name = "DIRECCION", length = 100)
+	@Column
 	private String direccion;
-    
-    @Column(name = "ID_CLIENTE", length = 45)
-	private String idCliente;
-    
-    @Column(name = "CONTRASENA", length = 45)
+	@Column
 	private String contrasena;
 
 	public Cliente() {
 		super();
 	}
 
-	public Cliente(String dniCliente, String nombre, String apellido, String telefeno, String provincia,
-			String distrito, String direccion, String idCliente, String contrasena) {
-		super();
-		this.dniCliente = dniCliente;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.telefeno = telefeno;
-		this.provincia = provincia;
-		this.distrito = distrito;
-		this.direccion = direccion;
-		this.idCliente = idCliente;
-		this.contrasena = contrasena;
+	public int getId_cliente() {
+		return id_cliente;
 	}
 
-	public String getDniCliente() {
-		return dniCliente;
+	public void setId_cliente(int id_cliente) {
+		this.id_cliente = id_cliente;
 	}
 
-	public void setDniCliente(String dniCliente) {
-		this.dniCliente = dniCliente;
+	public String getDni_cliente() {
+		return dni_cliente;
+	}
+
+	public void setDni_cliente(String dni_cliente) {
+		this.dni_cliente = dni_cliente;
 	}
 
 	public String getNombre() {
@@ -85,12 +67,12 @@ public class Cliente implements Serializable{
 		this.apellido = apellido;
 	}
 
-	public String getTelefeno() {
-		return telefeno;
+	public String getTelefono() {
+		return telefono;
 	}
 
-	public void setTelefeno(String telefeno) {
-		this.telefeno = telefeno;
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 
 	public String getProvincia() {
@@ -117,14 +99,6 @@ public class Cliente implements Serializable{
 		this.direccion = direccion;
 	}
 
-	public String getIdCliente() {
-		return idCliente;
-	}
-
-	public void setIdCliente(String idCliente) {
-		this.idCliente = idCliente;
-	}
-
 	public String getContrasena() {
 		return contrasena;
 	}
@@ -133,5 +107,5 @@ public class Cliente implements Serializable{
 		this.contrasena = contrasena;
 	}
     
-    
+	
 }

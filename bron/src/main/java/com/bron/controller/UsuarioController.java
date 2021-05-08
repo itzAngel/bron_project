@@ -34,7 +34,7 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("/{id}")
-	public Usuario listarId(@PathVariable("id")String id){
+	public Usuario listarId(@PathVariable("id")int id){
 		return service.listarIdUsuario(id);
 	}
 	@PutMapping
@@ -42,7 +42,7 @@ public class UsuarioController {
 		return service.editUsuario(p);
 	}
 	@DeleteMapping("/{id}")
-	public Usuario delete(@PathVariable("id")String id) {
+	public Usuario delete(@PathVariable("id")int id) {
 		return service.deleteUsuario(id);
 	}
 }

@@ -13,63 +13,64 @@ public interface BronService {
 	/* Cliente */
 	List<Cliente> listarCliente();
 
-	Cliente listarIdCliente(String id);
+	Cliente listarIdCliente(int id);
 
 	Cliente addCliente(Cliente u);
 
 	Cliente editCliente(Cliente u);
 
-	Cliente deleteCliente(String id);
+	Cliente deleteCliente(int id);
 	
 	
 	
 	/* Usuario */
 	List<Usuario> listarUsuario();
 
-	Usuario listarIdUsuario(String id);
+	Usuario listarIdUsuario(int id);
 
 	Usuario addUsuario(Usuario u);
 
 	Usuario editUsuario(Usuario u);
 
-	Usuario deleteUsuario(String id);
+	Usuario deleteUsuario(int id);
 	
 	
 	
 	/* Categoria */
 	List<Categoria> listarCategoria();
 
-	Categoria listarIdCategoria(String id);
+	Categoria listarIdCategoria(int id);
 
 	Categoria addCategoria(Categoria u);
 
 	Categoria editCategoria(Categoria u);
 
-	Categoria deleteCategoria(String id);
+	Categoria deleteCategoria(int id);
 	
 	
 	
 	/* Producto */
 	List<Producto> listarProducto();
 
-	Producto listarIdProducto(String id);
+	Producto listarIdProducto(int id);
 
 	Producto addProducto(Producto u);
 
 	Producto editProducto(Producto u);
 
-	Producto deleteProducto(String id);
-
+	Producto deleteProducto(int id);
 	
 	
-	/*DetalleProducto */
+	
+	/* DetalleProducto */
 	List<DetalleProducto> listarDetalleProducto();
 
-	DetalleProducto listarIdDetalleProducto(String id);
+	DetalleProducto listarIdDetalleProducto(int id);
 
 	DetalleProducto addDetalleProducto(DetalleProducto u);
 
 	DetalleProducto editDetalleProducto(DetalleProducto u);
 
-	DetalleProducto deleteDetalleProducto(String id);
+	DetalleProducto deleteDetalleProducto(int id);
+	
 }

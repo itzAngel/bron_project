@@ -34,7 +34,7 @@ public class ClienteController {
 	}
 	
 	@GetMapping("/{id}")
-	public Cliente listarId(@PathVariable("id")String id){
+	public Cliente listarId(@PathVariable("id")int id){
 		return service.listarIdCliente(id);
 	}
 	@PutMapping
@@ -42,7 +42,7 @@ public class ClienteController {
 		return service.editCliente(p);
 	}
 	@DeleteMapping("/{id}")
-	public Cliente delete(@PathVariable("id")String id) {
+	public Cliente delete(@PathVariable("id")int id) {
 		return service.deleteCliente(id);
 	}
 }

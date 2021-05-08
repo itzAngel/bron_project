@@ -6,14 +6,13 @@ import org.springframework.data.repository.Repository;
 
 import com.bron.model.DetalleProducto;
 
-public interface DetalleProductoRepository extends Repository<DetalleProducto, String> {
+public interface DetalleProductoRepository extends Repository<DetalleProducto,Integer>{
 	
 	List<DetalleProducto> findAll();
 
-	DetalleProducto findById(String id);
+	DetalleProducto findById(int id);
 
 	DetalleProducto save(DetalleProducto p);
 
 	void delete(DetalleProducto p);
-	
 }

@@ -6,11 +6,11 @@ import org.springframework.data.repository.Repository;
 
 import com.bron.model.Usuario;
 
-public interface UsuarioRepository extends Repository<Usuario, String>{
+public interface UsuarioRepository extends Repository<Usuario, Integer>{
 	
 	List<Usuario> findAll();
 
-	Usuario findById(String id);
+	Usuario findById(int id);
 
 	Usuario save(Usuario p);
 

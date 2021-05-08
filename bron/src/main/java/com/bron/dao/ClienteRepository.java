@@ -6,11 +6,11 @@ import org.springframework.data.repository.Repository;
 
 import com.bron.model.Cliente;
 
-public interface ClienteRepository extends Repository<Cliente, String> {
+public interface ClienteRepository extends Repository<Cliente, Integer> {
 
 	List<Cliente> findAll();
 
-	Cliente findById(String id);
+	Cliente findById(int id);
 
 	Cliente save(Cliente p);
 

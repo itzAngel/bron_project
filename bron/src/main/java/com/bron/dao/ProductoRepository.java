@@ -6,11 +6,11 @@ import org.springframework.data.repository.Repository;
 
 import com.bron.model.Producto;
 
-public interface ProductoRepository extends Repository<Producto, String>{
-
+public interface ProductoRepository extends Repository<Producto,Integer>{
+	
 	List<Producto> findAll();
 
-	Producto findById(String id);
+	Producto findById(int id);
 
 	Producto save(Producto p);
 

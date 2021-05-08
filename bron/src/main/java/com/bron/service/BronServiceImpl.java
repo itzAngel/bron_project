@@ -19,13 +19,28 @@ import com.bron.model.Usuario;
 public class BronServiceImpl implements BronService{
 	
 	
+	
+	@Autowired
+	private ClienteRepository clienteRepository;
+	
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+	
+	@Autowired
+	private CategoriaRepository categoriaRepository;
+	
+	@Autowired
+	private ProductoRepository productoRepository;
+	
+	@Autowired
+	private DetalleProductoRepository detalleProductoRepository;
+	
+	
 	/* 
 	 * 
 	 * Cliente 
 	 * 
 	 * */
-	@Autowired
-	private ClienteRepository clienteRepository;
 	
 	@Override
 	public List<Cliente> listarCliente() {
@@ -33,7 +48,7 @@ public class BronServiceImpl implements BronService{
 	}
 
 	@Override
-	public Cliente listarIdCliente(String id) {
+	public Cliente listarIdCliente(int id) {
 		return clienteRepository.findById(id);
 	}
 
@@ -48,7 +63,7 @@ public class BronServiceImpl implements BronService{
 	}
 
 	@Override
-	public Cliente deleteCliente(String id) {
+	public Cliente deleteCliente(int id) {
 		Cliente agente = listarIdCliente(id);
 		clienteRepository.delete(agente);
 		return agente;
@@ -60,8 +75,6 @@ public class BronServiceImpl implements BronService{
 	 * Usuario 
 	 * 
 	 * */
-	@Autowired
-	private UsuarioRepository usuarioRepository;
 	
 	@Override
 	public List<Usuario> listarUsuario() {
@@ -69,7 +82,7 @@ public class BronServiceImpl implements BronService{
 	}
 
 	@Override
-	public Usuario listarIdUsuario(String id) {
+	public Usuario listarIdUsuario(int id) {
 		return usuarioRepository.findById(id);
 	}
 
@@ -84,7 +97,7 @@ public class BronServiceImpl implements BronService{
 	}
 
 	@Override
-	public Usuario deleteUsuario(String id) {
+	public Usuario deleteUsuario(int id) {
 		Usuario agente = listarIdUsuario(id);
 		usuarioRepository.delete(agente);
 		return agente;
@@ -97,8 +110,6 @@ public class BronServiceImpl implements BronService{
 	 * Categoria 
 	 * 
 	 * */
-	@Autowired
-	private CategoriaRepository categoriaRepository;
 	
 	@Override
 	public List<Categoria> listarCategoria() {
@@ -106,7 +117,7 @@ public class BronServiceImpl implements BronService{
 	}
 
 	@Override
-	public Categoria listarIdCategoria(String id) {
+	public Categoria listarIdCategoria(int id) {
 		return categoriaRepository.findById(id);
 	}
 
@@ -121,7 +132,7 @@ public class BronServiceImpl implements BronService{
 	}
 
 	@Override
-	public Categoria deleteCategoria(String id) {
+	public Categoria deleteCategoria(int id) {
 		Categoria agente = listarIdCategoria(id);
 		categoriaRepository.delete(agente);
 		return agente;
@@ -134,19 +145,17 @@ public class BronServiceImpl implements BronService{
 	 * Producto 
 	 * 
 	 * */
-	@Autowired
-	private ProductoRepository productoRepository;
 	
 	@Override
 	public List<Producto> listarProducto() {
 		return productoRepository.findAll();
 	}
-
+	
 	@Override
-	public Producto listarIdProducto(String id) {
+	public Producto listarIdProducto(int id) {
 		return productoRepository.findById(id);
 	}
-
+	
 	@Override
 	public Producto addProducto(Producto u) {
 		return productoRepository.save(u);
@@ -158,11 +167,13 @@ public class BronServiceImpl implements BronService{
 	}
 
 	@Override
-	public Producto deleteProducto(String id) {
+	public Producto deleteProducto(int id) {
 		Producto agente = listarIdProducto(id);
 		productoRepository.delete(agente);
 		return agente;
 	}
+	
+	
 	
 	
 	
@@ -171,19 +182,18 @@ public class BronServiceImpl implements BronService{
 	 * DetalleProducto 
 	 * 
 	 * */
-	@Autowired
-	private DetalleProductoRepository detalleProductoRepository;
+	
 	
 	@Override
 	public List<DetalleProducto> listarDetalleProducto() {
 		return detalleProductoRepository.findAll();
 	}
-
+	
 	@Override
-	public DetalleProducto listarIdDetalleProducto(String id) {
+	public DetalleProducto listarIdDetalleProducto(int id) {
 		return detalleProductoRepository.findById(id);
 	}
-
+	
 	@Override
 	public DetalleProducto addDetalleProducto(DetalleProducto u) {
 		return detalleProductoRepository.save(u);
@@ -195,9 +205,10 @@ public class BronServiceImpl implements BronService{
 	}
 
 	@Override
-	public DetalleProducto deleteDetalleProducto(String id) {
-		DetalleProducto agente = listarIdDetalleProducto(id);
-		detalleProductoRepository.delete(agente);
-		return agente;
+	public DetalleProducto deleteDetalleProducto(int id) {
+		DetalleProducto a = listarIdDetalleProducto(id);
+		detalleProductoRepository.delete(a);
+		return a;
 	}
+	
 }
