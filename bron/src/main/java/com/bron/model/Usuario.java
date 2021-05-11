@@ -1,5 +1,7 @@
 package com.bron.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,8 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+public class Usuario implements Serializable{
 
+	/** La Constant serialVersionUID. */
+    private static final long serialVersionUID = 1L;
+    
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
@@ -30,6 +35,19 @@ public class Usuario {
 	public Usuario() {
 		super();
 	}
+	
+	public Usuario(int id_usuario, String dni_usuario, String nombre, String apellido, String email, int privilegio,
+			String contrasena) {
+		super();
+		this.id_usuario = id_usuario;
+		this.dni_usuario = dni_usuario;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.email = email;
+		this.privilegio = privilegio;
+		this.contrasena = contrasena;
+	}
+
 
 	public int getId_usuario() {
 		return id_usuario;

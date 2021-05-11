@@ -1,22 +1,15 @@
 package com.bron.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "producto")
@@ -38,12 +31,24 @@ public class Producto implements Serializable{
 	@Column
 	private double precio;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne()
     @JoinColumn(name = "id_categoria", referencedColumnName = "id_categoria")
     private Categoria categoria;
+
+	public Producto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
-	@OneToMany(mappedBy = "producto", fetch = FetchType.LAZY)
-    private List<DetalleProducto> detalleproductoList = new ArrayList<>();
+	public Producto(int id_producto, String modelo, String genero, double precio, Categoria categoria) {
+		super();
+		this.id_producto = id_producto;
+		this.modelo = modelo;
+		this.genero = genero;
+		this.precio = precio;
+		this.categoria = categoria;
+	}
+
 
 	public int getId_producto() {
 		return id_producto;
@@ -76,7 +81,7 @@ public class Producto implements Serializable{
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	@JsonBackReference
+	//@JsonBackReference
 	public Categoria getCategoria() {
 		return categoria;
 	}
@@ -84,15 +89,5 @@ public class Producto implements Serializable{
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-	
-	@JsonManagedReference
-	public List<DetalleProducto> getDetalleproductoList() {
-		return detalleproductoList;
-	}
-
-	public void setDetalleproductoList(List<DetalleProducto> detalleproductoList) {
-		this.detalleproductoList = detalleproductoList;
-	}
-	
 	
 }

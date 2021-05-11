@@ -4,15 +4,12 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "detalle_producto")
@@ -28,7 +25,7 @@ public class DetalleProducto implements Serializable{
 	@Column
     private int id_detalle_producto;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne()
     @JoinColumn(name = "id_producto", referencedColumnName = "id_producto")
     private Producto producto;
 	
@@ -43,6 +40,22 @@ public class DetalleProducto implements Serializable{
 	
 	@Column
 	private int cantidad;
+	
+	public DetalleProducto(int id_detalle_producto, Producto producto, int talla, String color, String descripcion,
+			int cantidad) {
+		super();
+		this.id_detalle_producto = id_detalle_producto;
+		this.producto = producto;
+		this.talla = talla;
+		this.color = color;
+		this.descripcion = descripcion;
+		this.cantidad = cantidad;
+	}
+
+	public DetalleProducto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public int getId_detalle_producto() {
 		return id_detalle_producto;
@@ -52,7 +65,7 @@ public class DetalleProducto implements Serializable{
 		this.id_detalle_producto = id_detalle_producto;
 	}
 	
-	@JsonBackReference
+	//@JsonBackReference
 	public Producto getProducto() {
 		return producto;
 	}

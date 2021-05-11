@@ -1,5 +1,7 @@
 package com.bron.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,8 +11,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "cliente")
-public class Cliente{
-
+public class Cliente implements Serializable{
+	
+	
+	/** La Constant serialVersionUID. */
+    private static final long serialVersionUID = 1L;
+    
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_cliente;
@@ -34,6 +40,24 @@ public class Cliente{
 	public Cliente() {
 		super();
 	}
+	
+	
+
+	public Cliente(int id_cliente, String dni_cliente, String nombre, String apellido, String telefono,
+			String provincia, String distrito, String direccion, String contrasena) {
+		super();
+		this.id_cliente = id_cliente;
+		this.dni_cliente = dni_cliente;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.telefono = telefono;
+		this.provincia = provincia;
+		this.distrito = distrito;
+		this.direccion = direccion;
+		this.contrasena = contrasena;
+	}
+
+
 
 	public int getId_cliente() {
 		return id_cliente;
