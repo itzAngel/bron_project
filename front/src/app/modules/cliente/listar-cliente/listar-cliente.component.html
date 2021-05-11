@@ -4,20 +4,20 @@
             <caption>Lista de Clientes</caption>
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">DNI Cliente</th>
-                    <th scope="col">Nombre Cliente</th>
-                    <th scope="col">Apellido Cliente</th>
-                    <th scope="col">Telefeno Cliente</th>
-                    <th scope="col">Direccion Cliente</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Telefeno</th>
+                    <th scope="col">Direccion</th>
                     <th scope="col">Opciones</th>
                 </tr>
             </thead>
             <tbody *ngFor="let cliente of clientes">
                 <tr>
-                    <th scope="row">{{cliente.dniCliente}} </th>
+                    <th scope="row">{{cliente.dni_cliente}} </th>
                     <td>{{cliente.nombre}}</td>
                     <td>{{cliente.apellido}}</td>
-                    <td>{{cliente.telefeno}}</td>
+                    <td>{{cliente.telefono}}</td>
                     <td>{{cliente.direccion}}</td>
                     <td>
                         <button type="button" class="btn btn-primary" (click)="Editar(cliente)">Editar</button> &nbsp;

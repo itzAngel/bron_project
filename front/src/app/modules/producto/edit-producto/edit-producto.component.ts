@@ -50,10 +50,9 @@ export class EditProductoComponent implements OnInit {
   }
 
   validar() {
-    if (this.producto.codigoProducto != null && this.producto.modelo != null && 
-      this.producto.talla != null && this.producto.color != null && 
+    if (this.producto.modelo != null && 
       this.producto.genero != null && this.producto.categoria != null && 
-      this.producto.precio != null && this.producto.cantidad != null) {
+      this.producto.precio != null) {
       return true;
     } else {
       return false;
@@ -63,7 +62,7 @@ export class EditProductoComponent implements OnInit {
   Actualizar() {
     if (this.validar()) {
       this.service.updatProducto(this.producto).subscribe(data => {
-          this.openSnackBar("Cliente se actualizo con exito");
+          this.openSnackBar("Producto se actualizo con exito");
           this.router.navigate(['../listarProducto'], {relativeTo: this.route}); //to navigate with sibling
           this.limpiar();
       });

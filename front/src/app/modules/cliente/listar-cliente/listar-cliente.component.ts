@@ -38,7 +38,7 @@ export class ListarClienteComponent implements OnInit {
   }
 
   Eliminar(cliente: Cliente): void {
-    this.service.deleteCliente(cliente.dniCliente).subscribe(data => {
+    this.service.deleteCliente(cliente.id_cliente).subscribe(data => {
       this.clientes = this.clientes.filter(p => p !== cliente);
     });
     this.openSnackBar("Cliente se elimino con exito");

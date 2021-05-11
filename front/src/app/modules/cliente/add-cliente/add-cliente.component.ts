@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
 
@@ -16,7 +16,7 @@ export class AddClienteComponent implements OnInit {
   clientes: Cliente[] = [];
 
   constructor(public dialog: MatDialog, public service: ClienteService, private _snackBar: MatSnackBar,
-    public router:Router) { }
+    public router:Router, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -34,9 +34,9 @@ export class AddClienteComponent implements OnInit {
   }
 
   validar() {
-    if (this.cliente.dniCliente != null && this.cliente.nombre != null &&  this.cliente.apellido != null && 
-      this.cliente.telefeno != null && this.cliente.provincia != null && this.cliente.distrito != null && 
-      this.cliente.direccion != null && this.cliente.idCliente != null && this.cliente.contrasena) {
+    if (this.cliente.dni_cliente != null && this.cliente.nombre != null &&  this.cliente.apellido != null && 
+      this.cliente.telefono != null && this.cliente.provincia != null && this.cliente.distrito != null && 
+      this.cliente.direccion != null && this.cliente.contrasena) {
       return true;
     } else {
       return false;
@@ -46,9 +46,9 @@ export class AddClienteComponent implements OnInit {
   Guardar(cliente: Cliente) {
     if (this.validar()) {
       this.service.createCliente(cliente).subscribe(data => {
-          this.openSnackBar("Categoria se agrego con exito");
+          this.openSnackBar("Cliente se agrego con exito");
           this.limpiar();
-          this.router.navigate(['listarCliente']);
+          this.router.navigate(['../listarCliente'], {relativeTo: this.route}); //to navigate with sibling
       });
     } else {
       this.openSnackBar("Llena todos los campos del cliente");

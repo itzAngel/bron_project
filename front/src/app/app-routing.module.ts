@@ -7,6 +7,9 @@ import { AddClienteComponent } from './modules/cliente/add-cliente/add-cliente.c
 import { EditClienteComponent } from './modules/cliente/edit-cliente/edit-cliente.component';
 import { ListarClienteComponent } from './modules/cliente/listar-cliente/listar-cliente.component';
 import { DefaultComponent } from './modules/default/default.component';
+import { AddDetalleProductoComponent } from './modules/detalleProducto/add-detalle-producto/add-detalle-producto.component';
+import { EditDetalleProductoComponent } from './modules/detalleProducto/edit-detalle-producto/edit-detalle-producto.component';
+import { ListarDetalleProductoComponent } from './modules/detalleProducto/listar-detalle-producto/listar-detalle-producto.component';
 import { HomeComponent } from './modules/home/home.component';
 import { AddProductoComponent } from './modules/producto/add-producto/add-producto.component';
 import { EditProductoComponent } from './modules/producto/edit-producto/edit-producto.component';
@@ -19,7 +22,7 @@ import { DashboardComponent } from './shared/dashboard/dashboard.component';
 const routes: Routes = [
   {path: '', component: DefaultComponent,
     children: [
-        {path: '',component: DashboardComponent},
+        {path: '',component: HomeComponent},
         {path: 'home',component: HomeComponent},
         {path: 'dashboard',component: DashboardComponent, 
             children: [
@@ -35,6 +38,9 @@ const routes: Routes = [
               {path: 'addCliente',component: AddClienteComponent},
               {path: 'listarCliente',component: ListarClienteComponent},
               {path: 'editCliente',component: EditClienteComponent},
+              {path: 'addDetalleProducto',component: AddDetalleProductoComponent},
+              {path: 'listarDetalleProducto',component: ListarDetalleProductoComponent},
+              {path: 'editDetalleProducto',component: EditDetalleProductoComponent},
             ]
         },
     ]

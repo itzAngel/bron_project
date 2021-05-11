@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
@@ -16,7 +16,7 @@ export class AddUsuarioComponent implements OnInit {
   usuarios: Usuario[] = [];
 
   constructor(public dialog: MatDialog, public service: UsuarioService, private _snackBar: MatSnackBar,
-    public router:Router) { }
+    public router:Router, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -34,8 +34,8 @@ export class AddUsuarioComponent implements OnInit {
   }
 
   validar() {
-    if (this.usuario.dniUsuario != null && this.usuario.nombre != null &&  this.usuario.apellido != null && 
-      this.usuario.email != null && this.usuario.privilegio != null && this.usuario.idUsuario != null 
+    if (this.usuario.dni_usuario != null && this.usuario.nombre != null &&  this.usuario.apellido != null && 
+      this.usuario.email != null && this.usuario.privilegio != null 
       && this.usuario.contrasena) {
       return true;
     } else {
@@ -46,9 +46,9 @@ export class AddUsuarioComponent implements OnInit {
   Guardar(usuario: Usuario) {
     if (this.validar()) {
       this.service.createUsuario(usuario).subscribe(data => {
-          this.openSnackBar("Categoria se agrego con exito");
+          this.openSnackBar("Usuario se agrego con exito");
           this.limpiar();
-          this.router.navigate(['listarUsuario']);
+          this.router.navigate(['../listarUsuario'], {relativeTo: this.route}); //to navigate with sibling
       });
     } else {
       this.openSnackBar("Llena todos los campos del usuario");

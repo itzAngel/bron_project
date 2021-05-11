@@ -27,6 +27,9 @@ import { EditClienteComponent } from './modules/cliente/edit-cliente/edit-client
 import { AddUsuarioComponent } from './modules/usuario/add-usuario/add-usuario.component';
 import { ListarUsuarioComponent } from './modules/usuario/listar-usuario/listar-usuario.component';
 import { EditUsuarioComponent } from './modules/usuario/edit-usuario/edit-usuario.component';
+import { AddDetalleProductoComponent } from './modules/detalleProducto/add-detalle-producto/add-detalle-producto.component';
+import { ListarDetalleProductoComponent } from './modules/detalleProducto/listar-detalle-producto/listar-detalle-producto.component';
+import { EditDetalleProductoComponent } from './modules/detalleProducto/edit-detalle-producto/edit-detalle-producto.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { EditUsuarioComponent } from './modules/usuario/edit-usuario/edit-usuari
     AddUsuarioComponent,
     ListarUsuarioComponent,
     EditUsuarioComponent,
+    AddDetalleProductoComponent,
+    ListarDetalleProductoComponent,
+    EditDetalleProductoComponent,
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,6 @@
+import { Producto } from "./producto";
+
 export class Categoria {
-    codigoCategoria: string = null;
+    id_categoria: number = null;
 	categoria: string = null;
 }

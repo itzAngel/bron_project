@@ -1,14 +1,13 @@
 <div class="container">
     <div class="card mt-4">
         <div class="card-header">
-            Editar Producto
+            <button mat-icon-button routerLink="../listarCategoria">
+                <mat-icon>reply</mat-icon>
+            </button> Editar Producto
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-md-6 mb-3">
-                    <input type="text" placeholder="Editar ID categoría" class="form-control" name="codigoCategoria" #codigoCategoria="ngModel" [(ngModel)]="categoria.codigoCategoria" disabled>
-                </div>
-                <div class="col-md-6 mb-3">
+                <div class="col-md-12 mb-3">
                     <input type="text" placeholder="Editar Nombre Categoría" class="form-control" name="category" #category="ngModel" [(ngModel)]="categoria.categoria">
                 </div>
             </div>

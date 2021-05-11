@@ -22,13 +22,13 @@ export class ClienteService {
   createCliente(cliente: Cliente){
     return this.http.post<Cliente>(this.Url,cliente);
   }
-  getClienteId(id: string){
+  getClienteId(id: number){
     return this.http.get<Cliente>(this.Url+"/"+id);
   }
   updatCliente(cliente: Cliente){
     return this.http.put<Cliente>(this.Url,cliente);
   }
-  deleteCliente(id: string){
+  deleteCliente(id: number){
     return this.http.delete(this.Url + "/" + id);
   }
 

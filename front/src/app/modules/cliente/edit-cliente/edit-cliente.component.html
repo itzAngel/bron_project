@@ -1,12 +1,14 @@
 <div class="container">
     <div class="card mt-4">
         <div class="card-header">
-            Editar Cliente
+            <button mat-icon-button routerLink="../listarCliente">
+                <mat-icon>reply</mat-icon>
+            </button>Editar Cliente
         </div>
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <input type="text" placeholder="Editar dni Cliente" class="form-control" name="dniCliente" #dniCliente="ngModel" [(ngModel)]="cliente.dniCliente" disabled>
+                    <input type="text" placeholder="Editar dni Cliente" class="form-control" name="dniCliente" #dniCliente="ngModel" [(ngModel)]="cliente.dni_cliente">
                 </div>
                 <div class="col-md-6 mb-3">
                     <input type="text" placeholder="Editar Nombre" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="cliente.nombre">
@@ -17,7 +19,7 @@
                     <input type="text" placeholder="Editar apellido" class="form-control" name="apellido" #apellido="ngModel" [(ngModel)]="cliente.apellido">
                 </div>
                 <div class="col-md-6 mb-3">
-                    <input type="text" placeholder="Editar telefeno" class="form-control" name="telefeno" #telefeno="ngModel" [(ngModel)]="cliente.telefeno">
+                    <input type="text" placeholder="Editar telefeno" class="form-control" name="tele" #tele="ngModel" [(ngModel)]="cliente.telefono">
                 </div>
             </div>
             <div class="row">
@@ -33,12 +35,7 @@
                     <input type="text" placeholder="Editar direccion" class="form-control" name="direccion" #direccion="ngModel" [(ngModel)]="cliente.direccion">
                 </div>
                 <div class="col-md-6 mb-3">
-                    <input type="text" placeholder="Editar idCliente" class="form-control" name="idCliente" #idCliente="ngModel" [(ngModel)]="cliente.idCliente">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 mb-3">
-                    <input type="text" placeholder="Editar contrasena" class="form-control" name="contrasena" #contrasena="ngModel" [(ngModel)]="cliente.contrasena">
+                    <input type="password" placeholder="Editar contrasena" class="form-control" name="contrasena" #contrasena="ngModel" [(ngModel)]="cliente.contrasena">
                 </div>
             </div>
             <div class="row">

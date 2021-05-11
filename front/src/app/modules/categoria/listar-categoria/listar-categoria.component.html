@@ -6,16 +6,16 @@
                 <tr>
                     <th scope="col">Código Categoría</th>
                     <th scope="col">Nombre Categoría</th>
-                    <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Opciones</th>
+                    <th scope="col">Opciones</th>
                 </tr>
             </thead>
-            <tbody *ngFor="let categoria of categorias">
+            <tbody *ngFor="let cat of categorias">
                 <tr>
-                    <th scope="row">{{categoria.codigoCategoria}} </th>
-                    <td>{{categoria.categoria}}</td>
+                    <th scope="row">{{cat.id_categoria}} </th>
+                    <td>{{cat.categoria}}</td>
                     <td>
-                        <button type="button" class="btn btn-primary" (click)="Editar(categoria)">Editar</button> &nbsp;
-                        <button type="button" class="btn btn-danger" (click)="Eliminar(categoria)">Eliminar</button>
+                        <button type="button" class="btn btn-primary" (click)="Editar(cat)">Editar</button> &nbsp;
+                        <button type="button" class="btn btn-danger" (click)="Eliminar(cat)">Eliminar</button>
                     </td>
                 </tr>
             </tbody>

@@ -38,9 +38,9 @@ export class EditClienteComponent implements OnInit {
   }
 
   validar() {
-    if (this.cliente.dniCliente != null && this.cliente.nombre != null &&  this.cliente.apellido != null && 
-      this.cliente.telefeno != null && this.cliente.provincia != null && this.cliente.distrito != null && 
-      this.cliente.direccion != null && this.cliente.idCliente != null && this.cliente.contrasena) {
+    if (this.cliente.dni_cliente != null && this.cliente.nombre != null &&  this.cliente.apellido != null && 
+      this.cliente.telefono != null && this.cliente.provincia != null && this.cliente.distrito != null && 
+      this.cliente.direccion != null && this.cliente.contrasena) {
       return true;
     } else {
       return false;

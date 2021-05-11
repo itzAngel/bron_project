@@ -1,46 +1,41 @@
 <div class="container">
     <div class="card mt-4">
         <div class="card-header">
-            Editar Producto
+            <button mat-icon-button routerLink="../listarProducto">
+                <mat-icon>reply</mat-icon>
+            </button>Editar Producto
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-md-6 mb-3">
-                    <input type="text" placeholder="Ingrese código" class="form-control" name="codigoProducto" #codigoProducto="ngModel" [(ngModel)]="producto.codigoProducto" disabled>
-                </div>
-                <div class="col-md-6 mb-3">
+                <div class="col-md-12 mb-3">
                     <input type="text" placeholder="Ingrese modelo" class="form-control" name="modelo" #modelo="ngModel" [(ngModel)]="producto.modelo">
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <input type="number" placeholder="Elija Talla" class="form-control" min="38" max="43" name="talla" #talla="ngModel" [(ngModel)]="producto.talla">
+                    <mat-form-field style="width: 250px;">
+                        <mat-select placeholder="Genero" name="gene" #gene="ngModel" [(ngModel)]="producto.genero">
+                            <mat-option *ngFor="let obj of generos" [value]="obj.value">
+                                {{obj.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <input type="text" placeholder="Ingrese Color" class="form-control" name="color" #color="ngModel" [(ngModel)]="producto.color">
+                    <mat-form-field style="width: 250px;">
+                        <mat-select placeholder="Categoria" name="category" #category="ngModel" [(ngModel)]="producto.categoria">
+                            <mat-option *ngFor="let obj of categorias" [value]="obj">
+                                {{obj.categoria}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
                 </div>
             </div>
             <br>
             <div class="row">
-                <div class="col-md-6 mb-3">
-                    <select name="select" class="form-control" name="gene" #gene="ngModel" [(ngModel)]="producto.genero">
-                        <option *ngFor="let per1 of generos" [value]="per1.value">{{per1.viewValue}}</option>
-                    </select>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <select name="select" class="form-control" name="category" #category="ngModel" [(ngModel)]="producto.categoria">
-                        <option *ngFor="let per2 of categorias" [value]="per2">{{per2.categoria}}</option>
-                    </select>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-6 mb-3">
+                <div class="col-md-12 mb-3">
                     <input type="number" placeholder="Ingrese Precio" class="form-control" name="precio" #precio="ngModel" [(ngModel)]="producto.precio">
-                </div>
-                <div class="col-md-6 mb-3">
-                    <input type="number" placeholder="Ingrese Cantidad" class="form-control" name="cantidad" #cantidad="ngModel" [(ngModel)]="producto.cantidad">
                 </div>
             </div>
             <br>

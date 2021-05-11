@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/models/categoria';
 import { CategoriaService } from 'src/app/services/categoria.service';
 
@@ -15,9 +15,11 @@ export class AddCategoriaComponent implements OnInit {
   categoria: Categoria = new Categoria();
   categorias: Categoria[] = [];
 
-  constructor(public dialog: MatDialog, public service: CategoriaService, private _snackBar: MatSnackBar,public router:Router) { }
+  constructor(public dialog: MatDialog, public service: CategoriaService, private _snackBar: MatSnackBar,
+    public router:Router, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.limpiar();
   }
 
   openSnackBar(mensaje: string) {
@@ -45,7 +47,7 @@ export class AddCategoriaComponent implements OnInit {
       this.service.createCategoria(categoria).subscribe(data => {
           this.openSnackBar("Categoria se agrego con exito");
           this.limpiar();
-          this.router.navigate(['listarCategoria']);
+          this.router.navigate(['../listarCategoria'], {relativeTo: this.route}); //to navigate with sibling
       });
     } else {
       this.openSnackBar("Llena todos los campos de la categoria");

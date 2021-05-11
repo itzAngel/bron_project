@@ -22,13 +22,13 @@ export class ProductoService {
   createProducto(producto: Producto){
     return this.http.post<Producto>(this.Url,producto);
   }
-  getProductoId(id: string){
+  getProductoId(id: number){
     return this.http.get<Producto>(this.Url+"/"+id);
   }
   updatProducto(producto: Producto){
     return this.http.put<Producto>(this.Url,producto);
   }
-  deleteProducto(id: string){
+  deleteProducto(id: number){
     return this.http.delete(this.Url + "/" + id);
   }
 

@@ -22,13 +22,13 @@ export class UsuarioService {
   createUsuario(usuario: Usuario){
     return this.http.post<Usuario>(this.Url,usuario);
   }
-  getUsuarioId(id: string){
+  getUsuarioId(id: number){
     return this.http.get<Usuario>(this.Url+"/"+id);
   }
   updateUsuario(usuario: Usuario){
     return this.http.put<Usuario>(this.Url,usuario);
   }
-  deleteUsuario(id: string){
+  deleteUsuario(id: number){
     return this.http.delete(this.Url + "/" + id);
   }
 

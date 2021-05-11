@@ -38,9 +38,8 @@ export class EditUsuarioComponent implements OnInit {
   }
 
   validar() {
-    if (this.usuario.dniUsuario != null && this.usuario.nombre != null &&  this.usuario.apellido != null && 
-      this.usuario.email != null && this.usuario.privilegio != null && this.usuario.idUsuario != null 
-      && this.usuario.contrasena) {
+    if (this.usuario.dni_usuario != null && this.usuario.nombre != null &&  this.usuario.apellido != null && 
+      this.usuario.email != null && this.usuario.privilegio != null && this.usuario.contrasena) {
       return true;
     } else {
       return false;
@@ -50,7 +49,7 @@ export class EditUsuarioComponent implements OnInit {
   Actualizar() {
     if (this.validar()) {
       this.service.updateUsuario(this.usuario).subscribe(data => {
-          this.openSnackBar("Cliente se actualizo con exito");
+          this.openSnackBar("Usuario se actualizo con exito");
           this.router.navigate(['../listarUsuario'], {relativeTo: this.route}); //to navigate with sibling
           this.limpiar();
       });

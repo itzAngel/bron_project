@@ -1,9 +1,9 @@
 export class Usuario {
-    dniUsuario: string = null;
+	id_usuario: number = null;
+    dni_usuario: string = null;
 	nombre: string = null;
 	apellido: string = null;
     email: string = null;
 	privilegio: string = null;
-    idUsuario: string = null;
 	contrasena: string = null;
 }

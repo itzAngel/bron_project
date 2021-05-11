@@ -21,13 +21,13 @@ export class CategoriaService {
   createCategoria(categoria: Categoria){
     return this.http.post<Categoria>(this.Url,categoria);
   }
-  getCategoriaId(id: string){
+  getCategoriaId(id: number){
     return this.http.get<Categoria>(this.Url+"/"+id);
   }
   updateCategoria(categoria: Categoria){
     return this.http.put<Categoria>(this.Url,categoria);
   }
-  deleteCategoria(id: string){
+  deleteCategoria(id: number){
     return this.http.delete(this.Url + "/" + id);
   }
 }

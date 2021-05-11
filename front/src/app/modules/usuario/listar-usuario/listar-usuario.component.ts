@@ -38,7 +38,7 @@ export class ListarUsuarioComponent implements OnInit {
   }
 
   Eliminar(usuario: Usuario): void {
-    this.service.deleteUsuario(usuario.dniUsuario).subscribe(data => {
+    this.service.deleteUsuario(usuario.id_usuario).subscribe(data => {
       this.usuarios = this.usuarios.filter(p => p !== usuario);
     });
     this.openSnackBar("Usuario se elimino con exito");

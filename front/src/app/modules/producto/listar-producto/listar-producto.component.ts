@@ -38,10 +38,10 @@ export class ListarProductoComponent implements OnInit {
   }
 
   Eliminar(producto: Producto): void {
-    this.service.deleteProducto(producto.codigoProducto).subscribe(data => {
+    this.service.deleteProducto(producto.id_producto).subscribe(data => {
       this.productos = this.productos.filter(p => p !== producto);
     });
-    this.openSnackBar("Categoria se elimino con exito");
+    this.openSnackBar("Producto se elimino con exito");
   }
 
 }

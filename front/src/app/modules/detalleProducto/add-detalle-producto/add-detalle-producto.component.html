@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header">
+            <button mat-icon-button routerLink="../listarDetalleProducto">
+                <mat-icon>reply</mat-icon>
+            </button>Agregar Detalle Producto
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <mat-form-field style="width: 250px;">
+                        <mat-select placeholder="Producto" name="producto" #producto="ngModel" [(ngModel)]="detalleProducto.producto">
+                            <mat-option *ngFor="let obj of productos" [value]="obj">
+                                {{obj.modelo}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="number" placeholder="Ingrese cantidad" class="form-control" name="cantidad" #cantidad="ngModel" [(ngModel)]="detalleProducto.cantidad">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <textarea type="text" placeholder="Ingrese descripcion" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="detalleProducto.descripcion"></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="number" placeholder="Ingrese talla" class="form-control" name="talla" #talla="ngModel" [(ngModel)]="detalleProducto.talla">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="text" placeholder="Ingrese color" class="form-control" name="color" #color="ngModel" [(ngModel)]="detalleProducto.color">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button type="button" class="btn btn-danger" (click)="Guardar(detalleProducto)">Guardar Detalle de Producto</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

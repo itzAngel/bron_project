@@ -1,12 +1,10 @@
 import { Categoria } from "./categoria";
+import { DetalleProducto } from "./detalle-producto";
 
 export class Producto {
-    codigoProducto: string = null;
+    id_producto: number = null;
 	modelo: string = null;
-	talla: number = null;
-    color: string = null;
 	genero: string = null;
-    categoria: Categoria = new Categoria();
     precio: number = null;
-    cantidad: number = null;
+    categoria: Categoria = new Categoria();
 }

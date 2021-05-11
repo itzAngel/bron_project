@@ -1,20 +1,20 @@
 <div class="container">
     <div class="row mt-4">
         <table class="table caption-top ">
-            <caption>Lista de Clientes</caption>
+            <caption>Lista de Usuarios</caption>
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">DNI Usuario</th>
-                    <th scope="col">Nombre Usuario</th>
-                    <th scope="col">Apellido Usuario</th>
-                    <th scope="col">Email Usuario</th>
-                    <th scope="col">Privilegio Usuario</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Privilegio</th>
                     <th scope="col">Opciones</th>
                 </tr>
             </thead>
             <tbody *ngFor="let usuario of usuarios">
                 <tr>
-                    <th scope="row">{{usuario.dniUsuario}} </th>
+                    <th scope="row">{{usuario.dni_usuario}} </th>
                     <td>{{usuario.nombre}}</td>
                     <td>{{usuario.apellido}}</td>
                     <td>{{usuario.email}}</td>

@@ -1,17 +1,13 @@
 <div class="container">
     <div class="card mt-4">
         <div class="card-header">
-            Agregar Categoría
+            <button mat-icon-button routerLink="../listarCategoria">
+                <mat-icon>reply</mat-icon>
+            </button>Agregar Categoría
         </div>
         <div class="card-body">
             <div class="row" style="justify-content: center;">
-                <div class="col-md-6 mb-3">
-                    <input type="text" placeholder="Ingrese ID Categoría" class="form-control" name="codigoCategoria" #codigoCategoria="ngModel" [(ngModel)]="categoria.codigoCategoria">
-                </div>
-            </div>
-            <br>
-            <div class="row" style="justify-content: center;">
-                <div class="col-md-6 mb-3">
+                <div class="col-md-12 mb-3">
                     <input type="text" placeholder="Ingrese Nombre de Categoría" class="form-control" name="category" #category="ngModel" [(ngModel)]="categoria.categoria">
                 </div>
             </div>

@@ -1,12 +1,14 @@
 <div class="container">
     <div class="card mt-4">
         <div class="card-header">
-            Agregar Usuario
+            <button mat-icon-button routerLink="../listarUsuario">
+                <mat-icon>reply</mat-icon>
+            </button>Agregar Usuario
         </div>
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <input type="text" placeholder="Editar dni Usuario" class="form-control" name="dniUsuario" #dniUsuario="ngModel" [(ngModel)]="usuario.dniUsuario">
+                    <input type="text" placeholder="Editar dni Usuario" class="form-control" name="dniUsuario" #dniUsuario="ngModel" [(ngModel)]="usuario.dni_usuario">
                 </div>
                 <div class="col-md-6 mb-3">
                     <input type="text" placeholder="Editar Nombre" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="usuario.nombre">
@@ -22,15 +24,10 @@
             </div>
             <div class="row">
                 <div class="col-md-12 mb-3">
-                    <input type="text" placeholder="Editar privilegio" class="form-control" name="privilegio" #privilegio="ngModel" [(ngModel)]="usuario.privilegio">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <input type="text" placeholder="Editar idUsuario" class="form-control" name="idUsuario" #idUsuario="ngModel" [(ngModel)]="usuario.idUsuario">
+                    <input type="number" placeholder="Editar privilegio (0/1)" class="form-control" name="privilegio" #privilegio="ngModel" [(ngModel)]="usuario.privilegio">
                 </div>
                 <div class="col-md-6 mb-3">
-                    <input type="text" placeholder="Editar contrasena" class="form-control" name="contrasena" #contrasena="ngModel" [(ngModel)]="usuario.contrasena">
+                    <input type="password" placeholder="Editar contrasena" class="form-control" name="contrasena" #contrasena="ngModel" [(ngModel)]="usuario.contrasena">
                 </div>
             </div>
             <div class="row">

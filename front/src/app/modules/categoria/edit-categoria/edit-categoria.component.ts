@@ -22,7 +22,6 @@ export class EditCategoriaComponent implements OnInit {
   ngOnInit(): void {
     this.categoria = new Categoria();
     this.categoria = this.service.categoria;
-    console.log(this.categoria)
   }
 
   openSnackBar(mensaje: string) {
@@ -49,7 +48,7 @@ export class EditCategoriaComponent implements OnInit {
   Actualizar() {
     if (this.validar()) {
       this.service.updateCategoria(this.categoria).subscribe(data => {
-          this.openSnackBar("Cliente se actualizo con exito");
+          this.openSnackBar("Categoria se actualizo con exito");
           this.router.navigate(['../listarCategoria'], {relativeTo: this.route}); //to navigate with sibling
           this.limpiar();
       });

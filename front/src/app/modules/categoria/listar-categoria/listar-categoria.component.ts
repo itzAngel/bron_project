@@ -34,12 +34,11 @@ export class ListarCategoriaComponent implements OnInit {
   
   Editar(categoria: Categoria):void {
     this.service.categoria=categoria;
-    console.log(this.service.categoria);
     this.router.navigate(['../editCategoria'], {relativeTo: this.route}); //to navigate with sibling
   }
 
   Eliminar(categoria: Categoria): void {
-    this.service.deleteCategoria(categoria.codigoCategoria).subscribe(data => {
+    this.service.deleteCategoria(categoria.id_categoria).subscribe(data => {
       this.categorias = this.categorias.filter(p => p !== categoria);
     });
     this.openSnackBar("Categoria se elimino con exito");
