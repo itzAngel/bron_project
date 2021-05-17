@@ -5,6 +5,7 @@ import java.util.List;
 import com.bron.model.Categoria;
 import com.bron.model.Cliente;
 import com.bron.model.DetalleProducto;
+import com.bron.model.Imagen;
 import com.bron.model.Producto;
 import com.bron.model.Usuario;
 
@@ -72,5 +73,15 @@ public interface BronService {
 	DetalleProducto editDetalleProducto(DetalleProducto u);
 
 	DetalleProducto deleteDetalleProducto(int id);
+	
+	
+	/* DetalleProducto */
+	List<Imagen> listarImagen();
+
+	Imagen listarIdImagen(int id);
+
+	Imagen addImagen(Imagen u);
+
+	Imagen deleteImagen(int id);
 	
 }

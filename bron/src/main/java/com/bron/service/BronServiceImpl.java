@@ -8,11 +8,13 @@ import org.springframework.stereotype.Service;
 import com.bron.dao.CategoriaRepository;
 import com.bron.dao.ClienteRepository;
 import com.bron.dao.DetalleProductoRepository;
+import com.bron.dao.ImagenRepository;
 import com.bron.dao.ProductoRepository;
 import com.bron.dao.UsuarioRepository;
 import com.bron.model.Categoria;
 import com.bron.model.Cliente;
 import com.bron.model.DetalleProducto;
+import com.bron.model.Imagen;
 import com.bron.model.Producto;
 import com.bron.model.Usuario;
 @Service
@@ -34,6 +36,9 @@ public class BronServiceImpl implements BronService{
 	
 	@Autowired
 	private DetalleProductoRepository detalleProductoRepository;
+	
+	@Autowired
+	private ImagenRepository imagenRepository;
 	
 	
 	/* 
@@ -211,4 +216,37 @@ public class BronServiceImpl implements BronService{
 		return a;
 	}
 	
+	
+	
+	
+	
+	/* 
+	 * 
+	 * Imagen 
+	 * 
+	 * */
+	
+	
+	@Override
+	public List<Imagen> listarImagen() {
+		return imagenRepository.findAll();
+	}
+	
+	@Override
+	public Imagen listarIdImagen(int id) {
+		return imagenRepository.findById(id);
+	}
+	
+	@Override
+	public Imagen addImagen(Imagen u) {
+		return imagenRepository.save(u);
+	}
+
+
+	@Override
+	public Imagen deleteImagen(int id) {
+		Imagen a = listarIdImagen(id);
+		imagenRepository.delete(a);
+		return a;
+	}
 }
