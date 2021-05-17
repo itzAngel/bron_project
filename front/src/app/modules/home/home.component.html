@@ -1,2 +1,72 @@
-<h1>HOME PAGE</h1>
-<button mat-button routerLink="/dashboard">Go to dashboard</button>
+<form action="">
+    <div class="container-fluid contenedor">
+        <header>
+            <div class="row">
+                <div class="col-md-4 col-xl pt-2 servicio_ayuda">
+                    <span class="servicio_ayuda_texto">Necesitas Ayuda</span>
+                    <p class="servicio_ayuda_numero"><i class="fas fa-phone"></i>&nbsp;&nbsp;942959184</p>
+                </div>
+
+                <div class="col-xl">
+                    <h1 class="titulo_marca">BRON</h1>
+                </div>
+
+                <div class="col-md-4 col-xl pt-2">
+                    <p class="carrito" routerLink="/dashboard" style="cursor: pointer;">Dashboard</p>
+                </div>
+
+                <div class="col-md-4 col-xl pt-2">
+                    <p class="carrito">Carrito</p>
+                </div>
+            </div>
+        </header>
+    </div>
+</form>
+
+<div class="container-fluid border container-slider">
+    <div class="row">
+        <div class="col-xl">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active imagen-slider">
+                        <img src="../../../assets/imagenes/zapatos1-2.jpg" class="d-block w-100% img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../assets/imagenes/zapatos2.jpg" class="d-block w-100% img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../assets/imagenes/zapatos3.jpg" class="d-block w-1000 img-fluid" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="main">
+    <div class="container">
+        <h2 class="main-title">Catalogo de Productos Bron</h2>
+        <br><br>
+        <section class="container-products">
+            <div class="grid-container">
+                <div class="card card-estilo mb-4" style="width: 350px; margin-right: 20px;" *ngFor="let obj of imagenes">
+                    <img src="{{obj.base64}}" class="card-img-top" style="object-fit: cover;">
+                    <div class="card-body">
+                        <h3 class="card-title">{{obj.producto.categoria.categoria}} {{obj.producto.modelo}}</h3>
+                        <span class="product__price">S/.{{obj.producto.precio}}</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

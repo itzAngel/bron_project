@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header">
+            <button mat-icon-button routerLink="../listarImagen">
+                <mat-icon>reply</mat-icon>
+            </button>Agregar Imagen
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <mat-form-field style="width: 250px;">
+                        <mat-select placeholder="Producto" name="produ" #produ="ngModel" [(ngModel)]="img.producto">
+                            <mat-option *ngFor="let obj of productos" [value]="obj">
+                                {{obj.modelo}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <form novalidate enctype="multipart/form-data" class="formedia">
+                        <input type="file" (change)="getFiles($event)" />
+                        <button mat-button type="reset">
+                            <mat-icon>cached</mat-icon>Reset
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button type="button" class="btn btn-danger" (click)="Subir()">Guardar Imagen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

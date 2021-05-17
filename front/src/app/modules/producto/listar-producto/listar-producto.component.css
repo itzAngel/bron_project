@@ -14,6 +14,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+.example-spacer {
+    flex: 1 1 auto;
+}
+
 :root {
     --blue: #007bff;
     --indigo: #6610f2;

@@ -1,5 +1,12 @@
 <div class="container">
     <div class="row mt-4">
+        <mat-toolbar>
+            <span>Lista de Detalles de Productos</span>
+            <span class="example-spacer"></span>
+            <button mat-button class="example-icon" routerLink="../addDetalleProducto">
+                <mat-icon>add_circle</mat-icon>Agregar
+            </button>
+        </mat-toolbar>
         <table class="table caption-top ">
             <caption>Lista de Detalles de Productos</caption>
             <thead class="table-dark">
@@ -17,6 +24,7 @@
                     <td>{{detalleProducto.talla}}</td>
                     <td>{{detalleProducto.color}}</td>
                     <td>{{detalleProducto.cantidad}}</td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <button type="button" class="btn btn-primary" (click)="Editar(detalleProducto)">Editar</button> &nbsp;
                     <button type="button" class="btn btn-danger" (click)="Eliminar(detalleProducto)">Eliminar</button>
                 </tr>

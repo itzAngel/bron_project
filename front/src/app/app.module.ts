@@ -30,6 +30,8 @@ import { EditUsuarioComponent } from './modules/usuario/edit-usuario/edit-usuari
 import { AddDetalleProductoComponent } from './modules/detalleProducto/add-detalle-producto/add-detalle-producto.component';
 import { ListarDetalleProductoComponent } from './modules/detalleProducto/listar-detalle-producto/listar-detalle-producto.component';
 import { EditDetalleProductoComponent } from './modules/detalleProducto/edit-detalle-producto/edit-detalle-producto.component';
+import { AddImagenComponent } from './modules/media/imagen/add-imagen/add-imagen.component';
+import { ListarImagenComponent } from './modules/media/imagen/listar-imagen/listar-imagen.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { EditDetalleProductoComponent } from './modules/detalleProducto/edit-det
     AddDetalleProductoComponent,
     ListarDetalleProductoComponent,
     EditDetalleProductoComponent,
+    AddImagenComponent,
+    ListarImagenComponent,
   ],
   imports: [
     CommonModule,

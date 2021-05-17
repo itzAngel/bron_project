@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row mt-4">
+        <mat-toolbar>
+            <span>Lista de Imagenes</span>
+            <span class="example-spacer"></span>
+            <button mat-button class="example-icon" routerLink="../addImagen">
+                <mat-icon>add_circle</mat-icon>Agregar
+            </button>
+        </mat-toolbar>
+        <section class="container-products">
+            <div class="grid-container">
+                <div class="card card-estilo" *ngFor="let ima of listaImagenes">
+                    <img src="{{ima.base64}}" class="card-img-top">
+                    <div class="card-body">
+                        <span class="card-title">Producto: {{ima.producto.modelo}}</span>
+                        <br>
+                        <span class="product__price">Precio: S/.{{ima.producto.precio}}</span>
+                    </div>
+                    <button type="button" class="btn btn-danger" (click)="Eliminar(ima)">Eliminar</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

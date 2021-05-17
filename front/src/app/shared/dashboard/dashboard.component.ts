@@ -29,6 +29,8 @@ export class DashboardComponent implements OnInit,OnDestroy {
     {link: 'addDetalleProducto', viewValue: 'Agregar Detalle de Producto'},
     {link: 'listarDetalleProducto', viewValue: 'Listar Detalle de Producto'},
     {link: 'editDetalleProducto', viewValue: 'Editar Detalle de Producto'},
+    {link: 'addImagen', viewValue: 'Agregar Imagen'},
+    {link: 'listarImagen', viewValue: 'Listar Imagenes'},
   ];
   mobileQuery: MediaQueryList;
 

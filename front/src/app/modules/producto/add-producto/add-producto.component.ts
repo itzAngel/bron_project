@@ -3,8 +3,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/models/categoria';
+import { Imagen } from 'src/app/models/imagen';
 import { Producto } from 'src/app/models/producto';
 import { CategoriaService } from 'src/app/services/categoria.service';
+import { ImagenService } from 'src/app/services/imagen.service';
 import { ProductoService } from 'src/app/services/producto.service';
 interface Genero {
   value: string;
@@ -16,7 +18,7 @@ interface Genero {
   styleUrls: ['./add-producto.component.css']
 })
 export class AddProductoComponent implements OnInit {
-
+  
   producto: Producto = new Producto();
   productos: Producto[] = [];
   foods = [

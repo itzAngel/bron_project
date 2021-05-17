@@ -40,8 +40,13 @@ export class ListarDetalleProductoComponent implements OnInit {
   Eliminar(detalleProducto: DetalleProducto): void {
     this.service.deleteDetalleProducto(detalleProducto.id_detalle_producto).subscribe(data => {
       this.detalleProductos = this.detalleProductos.filter(p => p !== detalleProducto);
-    });
-    this.openSnackBar("Detalle de Producto se elimino con exito");
+      this.openSnackBar("Detalle de Producto se elimino con exito");
+      },
+      err => {
+        this.openSnackBar("No se pudo eliminar el Detalle de Producto, probablemente esté siendo usado en otro modulo");
+      }
+    );
+    
   }
 
 }

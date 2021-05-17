@@ -40,8 +40,12 @@ export class ListarClienteComponent implements OnInit {
   Eliminar(cliente: Cliente): void {
     this.service.deleteCliente(cliente.id_cliente).subscribe(data => {
       this.clientes = this.clientes.filter(p => p !== cliente);
-    });
-    this.openSnackBar("Cliente se elimino con exito");
+      this.openSnackBar("Cliente se elimino con exito");
+      },
+      err => {
+        this.openSnackBar("No se pudo eliminar el Cliente, probablemente esté siendo usado en otro modulo");
+      }
+    );
   }
 
 }

@@ -40,8 +40,12 @@ export class ListarUsuarioComponent implements OnInit {
   Eliminar(usuario: Usuario): void {
     this.service.deleteUsuario(usuario.id_usuario).subscribe(data => {
       this.usuarios = this.usuarios.filter(p => p !== usuario);
-    });
-    this.openSnackBar("Usuario se elimino con exito");
+      this.openSnackBar("Usuario se elimino con exito");
+      },
+      err => {
+        this.openSnackBar("No se pudo eliminar el Usuario, probablemente esté siendo usado en otro modulo");
+      }
+    );
   }
 
 }

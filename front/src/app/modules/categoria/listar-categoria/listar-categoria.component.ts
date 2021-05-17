@@ -38,9 +38,14 @@ export class ListarCategoriaComponent implements OnInit {
   }
 
   Eliminar(categoria: Categoria): void {
-    this.service.deleteCategoria(categoria.id_categoria).subscribe(data => {
+    this.service.deleteCategoria(categoria.id_categoria).subscribe(
+      data => {
       this.categorias = this.categorias.filter(p => p !== categoria);
-    });
-    this.openSnackBar("Categoria se elimino con exito");
+      this.openSnackBar("Categoria se elimino con exito");
+      },
+      err => {
+        this.openSnackBar("No se pudo eliminar la Categoria, probablemente esté siendo usada en otro modulo");
+      }
+    );
   }
 }
