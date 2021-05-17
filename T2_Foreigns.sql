@@ -85,5 +85,14 @@ CREATE TABLE IF NOT EXISTS `bron`.`detalle_producto` (
   `cantidad` INT NULL,  
   PRIMARY KEY (`id_detalle_producto`),
   FOREIGN KEY (id_producto) REFERENCES producto(id_producto));
-
-
+  
+-- -----------------------------------------------------
+-- Table `bd`.`imagen`
+-- -----------------------------------------------------
+CREATE TABLE `bron`.`imagen` (
+  `id_imagen` INT NOT NULL AUTO_INCREMENT,
+  `id_producto` INT NOT NULL,
+  `base64` LONGTEXT NULL,
+  `contentType` VARCHAR(255) NULL,
+  PRIMARY KEY (`id_imagen`) ,
+  FOREIGN KEY (id_producto) REFERENCES producto(id_producto));
