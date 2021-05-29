@@ -6,20 +6,23 @@ import { Imagen } from 'src/app/models/imagen';
 import { Producto } from 'src/app/models/producto';
 import { ImagenService } from 'src/app/services/imagen.service';
 import { ProductoService } from 'src/app/services/producto.service';
+import { BaseComponent } from 'src/app/shared/base/base/base.component';
 
 @Component({
   selector: 'app-add-imagen',
   templateUrl: './add-imagen.component.html',
   styleUrls: ['./add-imagen.component.css']
 })
-export class AddImagenComponent implements OnInit {
+export class AddImagenComponent extends BaseComponent implements OnInit {
   imagen: File;
   img:Imagen = new Imagen();
   base64DefaultURL: string;
   selectedProduct: Producto = new Producto();
   productos: Producto[] = [];
-  constructor(public dialog: MatDialog, private _snackBar: MatSnackBar,public router:Router,
-    public route: ActivatedRoute, public imgservice: ImagenService, public productoservice: ProductoService) { }
+  constructor(public imgservice: ImagenService,public dialog: MatDialog, public _snackBar: MatSnackBar,
+    public router:Router, public route: ActivatedRoute, public productoservice: ProductoService) {
+    super(dialog,_snackBar,router,route);
+  }
 
   ngOnInit(): void {
     this.productoservice.getProductos().subscribe(data => {
@@ -27,13 +30,6 @@ export class AddImagenComponent implements OnInit {
     });
   }
 
-  openSnackBar(mensaje: string) {
-    this._snackBar.open(mensaje, 'OK', {
-      duration: 1000,
-      horizontalPosition: "center",
-      verticalPosition: "top",
-    });
-  }
   validar() {
     if (this.img.producto != null && this.imagen != null) {
       return true;

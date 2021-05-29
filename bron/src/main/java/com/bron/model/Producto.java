@@ -1,6 +1,8 @@
 package com.bron.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -34,6 +38,16 @@ public class Producto implements Serializable{
 	@ManyToOne()
     @JoinColumn(name = "id_categoria", referencedColumnName = "id_categoria")
     private Categoria categoria;
+	
+	@Lob
+	@Column
+	private String foto;
+	
+	@OneToMany(mappedBy = "producto")
+    private List<DetalleProducto> listaDetalleProducto = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "producto")
+    private List<Imagen> listaImagen = new ArrayList<>();
 
 	public Producto() {
 		super();

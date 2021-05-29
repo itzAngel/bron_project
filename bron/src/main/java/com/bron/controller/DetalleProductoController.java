@@ -28,6 +28,10 @@ public class DetalleProductoController {
 	public List<DetalleProducto> listar(){
 		return service.listarDetalleProducto();
 	}
+	@GetMapping("/obtenerlistaporid/{id}")
+	public List<DetalleProducto> obtenerlistaporid(@PathVariable("id")int id){
+		return service.getListaporIdProducto(id);
+	}
 	@PostMapping
 	public DetalleProducto agregar(@RequestBody DetalleProducto p) {
 		return service.addDetalleProducto(p);

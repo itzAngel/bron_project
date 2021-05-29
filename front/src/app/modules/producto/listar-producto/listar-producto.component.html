@@ -24,8 +24,10 @@
                     <td>{{producto.modelo}}</td>
                     <td>{{producto.genero}}</td>
                     <td>{{producto.precio}}</td>
-                    <button type="button" class="btn btn-primary" (click)="Editar(producto)">Editar</button> &nbsp;
-                    <button type="button" class="btn btn-danger" (click)="Eliminar(producto)">Eliminar</button>
+                    <td>
+                        <button type="button" class="btn btn-primary" (click)="Editar(producto)">Editar</button> &nbsp;
+                        <button type="button" class="btn btn-danger" (click)="Eliminar(producto)">Eliminar</button>
+                    </td>
                 </tr>
             </tbody>
         </table>

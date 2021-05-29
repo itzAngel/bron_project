@@ -32,6 +32,8 @@ import { ListarDetalleProductoComponent } from './modules/detalleProducto/listar
 import { EditDetalleProductoComponent } from './modules/detalleProducto/edit-detalle-producto/edit-detalle-producto.component';
 import { AddImagenComponent } from './modules/media/imagen/add-imagen/add-imagen.component';
 import { ListarImagenComponent } from './modules/media/imagen/listar-imagen/listar-imagen.component';
+import { LoginComponent } from './security/login/login.component';
+import { BaseComponent } from './shared/base/base/base.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { ListarImagenComponent } from './modules/media/imagen/listar-imagen/list
     EditDetalleProductoComponent,
     AddImagenComponent,
     ListarImagenComponent,
+    LoginComponent,
+    BaseComponent,
   ],
   imports: [
     CommonModule,

@@ -2,17 +2,23 @@ package com.bron.service;
 
 import java.util.List;
 
+import com.bron.model.AsignaProductoTienda;
 import com.bron.model.Categoria;
 import com.bron.model.Cliente;
 import com.bron.model.DetalleProducto;
+import com.bron.model.DetalleVenta;
 import com.bron.model.Imagen;
 import com.bron.model.Producto;
+import com.bron.model.Tienda;
 import com.bron.model.Usuario;
+import com.bron.model.Venta;
 
 public interface BronService {
 	
 	/* Cliente */
 	List<Cliente> listarCliente();
+	
+	Cliente authCliente(String username, String password);
 
 	Cliente listarIdCliente(int id);
 
@@ -23,10 +29,11 @@ public interface BronService {
 	Cliente deleteCliente(int id);
 	
 	
-	
 	/* Usuario */
 	List<Usuario> listarUsuario();
-
+	
+	Usuario auth(String username, String password);
+	
 	Usuario listarIdUsuario(int id);
 
 	Usuario addUsuario(Usuario u);
@@ -34,7 +41,6 @@ public interface BronService {
 	Usuario editUsuario(Usuario u);
 
 	Usuario deleteUsuario(int id);
-	
 	
 	
 	/* Categoria */
@@ -49,9 +55,12 @@ public interface BronService {
 	Categoria deleteCategoria(int id);
 	
 	
-	
 	/* Producto */
 	List<Producto> listarProducto();
+	
+	List<Producto> listarProductoxModelo(String modelo);
+	
+	List<Producto> listarProductoxCategoria(Categoria categoria);
 
 	Producto listarIdProducto(int id);
 
@@ -62,9 +71,10 @@ public interface BronService {
 	Producto deleteProducto(int id);
 	
 	
-	
 	/* DetalleProducto */
 	List<DetalleProducto> listarDetalleProducto();
+	
+	List<DetalleProducto> getListaporIdProducto(int id);
 
 	DetalleProducto listarIdDetalleProducto(int id);
 
@@ -75,8 +85,10 @@ public interface BronService {
 	DetalleProducto deleteDetalleProducto(int id);
 	
 	
-	/* DetalleProducto */
+	/* Imagen */
 	List<Imagen> listarImagen();
+	
+	List<Imagen> getListaImagenporIdProducto(int id);
 
 	Imagen listarIdImagen(int id);
 
@@ -84,4 +96,56 @@ public interface BronService {
 
 	Imagen deleteImagen(int id);
 	
+	
+	/* Venta */
+	List<Venta> listarVenta();
+
+	Venta listarIdVenta(int id);
+
+	Venta addVenta(Venta u);
+	
+	Venta editVenta(Venta u);
+
+	Venta deleteVenta(int id);
+	
+	
+	/* DetalleVenta */
+	List<DetalleVenta> listarDetalleVenta();
+	
+	List<DetalleVenta> getListaporIdVenta(int id);
+
+	DetalleVenta listarIdDetalleVenta(int id);
+
+	DetalleVenta addDetalleVenta(DetalleVenta u);
+	
+	DetalleVenta editDetalleVenta(DetalleVenta u);
+
+	DetalleVenta deleteDetalleVenta(int id);
+	
+	
+	/* Tienda */
+	List<Tienda> listarTienda();
+
+	Tienda listarIdTienda(int id);
+
+	Tienda addTienda(Tienda u);
+	
+	Tienda editTienda(Tienda u);
+
+	Tienda deleteTienda(int id);
+	
+	
+	/* AsignaProductoTienda */
+	List<AsignaProductoTienda> listarAsignaProductoTienda();
+	
+	List<AsignaProductoTienda> getListaporIdTienda(int id);
+
+	AsignaProductoTienda listarIdAsignaProductoTienda(int id);
+
+	AsignaProductoTienda addAsignaProductoTienda(AsignaProductoTienda u);
+	
+	AsignaProductoTienda editAsignaProductoTienda(AsignaProductoTienda u);
+
+	AsignaProductoTienda deleteAsignaProductoTienda(int id);
+
 }

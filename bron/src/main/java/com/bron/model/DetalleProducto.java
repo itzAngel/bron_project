@@ -37,24 +37,19 @@ public class DetalleProducto implements Serializable{
 	
 	@Column
 	private String descripcion;
-	
-	@Column
-	private int cantidad;
-	
-	public DetalleProducto(int id_detalle_producto, Producto producto, int talla, String color, String descripcion,
-			int cantidad) {
+
+	public DetalleProducto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public DetalleProducto(int id_detalle_producto, Producto producto, int talla, String color, String descripcion) {
 		super();
 		this.id_detalle_producto = id_detalle_producto;
 		this.producto = producto;
 		this.talla = talla;
 		this.color = color;
 		this.descripcion = descripcion;
-		this.cantidad = cantidad;
-	}
-
-	public DetalleProducto() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getId_detalle_producto() {
@@ -64,8 +59,7 @@ public class DetalleProducto implements Serializable{
 	public void setId_detalle_producto(int id_detalle_producto) {
 		this.id_detalle_producto = id_detalle_producto;
 	}
-	
-	//@JsonBackReference
+
 	public Producto getProducto() {
 		return producto;
 	}
@@ -96,14 +90,6 @@ public class DetalleProducto implements Serializable{
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}
-
-	public int getCantidad() {
-		return cantidad;
-	}
-
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
 	}
 	
 }

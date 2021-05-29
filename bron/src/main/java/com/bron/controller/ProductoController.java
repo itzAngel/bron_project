@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bron.model.Categoria;
 import com.bron.model.Producto;
 import com.bron.service.BronService;
 
@@ -27,6 +28,16 @@ public class ProductoController {
 	@GetMapping
 	public List<Producto> listar(){
 		return service.listarProducto();
+	}
+	
+	@GetMapping("/listarxModelo/{modelo}")
+	public List<Producto> listarxModelo(@PathVariable("modelo")String modelo){
+		return service.listarProductoxModelo(modelo);
+	}
+	
+	@GetMapping("/listarxCategoria")
+	public List<Producto> listarxCategoria(@RequestBody Categoria categoria){
+		return service.listarProductoxCategoria(categoria);
 	}
 	@PostMapping
 	public Producto agregar(@RequestBody Producto p) {

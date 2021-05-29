@@ -27,6 +27,10 @@ public class ImagenController {
 	public List<Imagen> listar(){
 		return service.listarImagen();
 	}
+	@GetMapping("/obtenerlistaporid/{id}")
+	public List<Imagen> obtenerlistaporid(@PathVariable("id")int id){
+		return service.getListaImagenporIdProducto(id);
+	}
 	@PostMapping
 	public Imagen agregar(@RequestBody Imagen p) {
 		return service.addImagen(p);

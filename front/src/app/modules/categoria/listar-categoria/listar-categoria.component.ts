@@ -5,30 +5,24 @@ import { Router } from '@angular/router';
 import { Categoria } from 'src/app/models/categoria';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import { ActivatedRoute } from '@angular/router';
+import { BaseComponent } from 'src/app/shared/base/base/base.component';
 @Component({
   selector: 'app-listar-categoria',
   templateUrl: './listar-categoria.component.html',
   styleUrls: ['./listar-categoria.component.css']
 })
-export class ListarCategoriaComponent implements OnInit {
+export class ListarCategoriaComponent extends BaseComponent implements OnInit {
 
   categoria: Categoria = new Categoria();
   categorias: Categoria[] = [];
 
-  constructor(public dialog: MatDialog, public service: CategoriaService,
-    private _snackBar: MatSnackBar,private router:Router, public route: ActivatedRoute) { }
-
+  constructor(public service: CategoriaService,public dialog: MatDialog, public _snackBar: MatSnackBar,
+    public router:Router, public route: ActivatedRoute) {
+    super(dialog,_snackBar,router,route);
+  }
   ngOnInit(): void {
     this.service.getCategorias().subscribe(data => {
       this.categorias = data;
-    });
-  }
-  
-  openSnackBar(mensaje: string) {
-    this._snackBar.open(mensaje, 'OK', {
-      duration: 1000,
-      horizontalPosition: "center",
-      verticalPosition: "top",
     });
   }
   

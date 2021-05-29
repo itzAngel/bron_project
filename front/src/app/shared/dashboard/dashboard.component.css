@@ -34,6 +34,10 @@ h1.example-app-name {
     min-height: 550px;
 }
 
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
 mat-sidenav {
     width: 250px;
 }

@@ -7,6 +7,7 @@ import { Categoria } from 'src/app/models/categoria';
 import { Producto } from 'src/app/models/producto';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import { ProductoService } from 'src/app/services/producto.service';
+import { BaseComponent } from 'src/app/shared/base/base/base.component';
 interface Genero {
   value: string;
   viewValue: string;
@@ -16,7 +17,7 @@ interface Genero {
   templateUrl: './edit-producto.component.html',
   styleUrls: ['./edit-producto.component.css']
 })
-export class EditProductoComponent implements OnInit {
+export class EditProductoComponent extends BaseComponent implements OnInit {
 
   producto: Producto = new Producto();
   productos: Producto[] = [];
@@ -25,22 +26,18 @@ export class EditProductoComponent implements OnInit {
     {value: 'masculino', viewValue: 'Masculino'},
     {value: 'femenino', viewValue: 'Femenino'}
   ];
-  constructor(public dialog: MatDialog, public service: ProductoService,  private http: HttpClient,
-    private _snackBar: MatSnackBar,public router:Router, public route: ActivatedRoute, public catservice: CategoriaService) { }
+  
+  constructor(public dialog: MatDialog, public _snackBar: MatSnackBar,
+    public router:Router, public route: ActivatedRoute, public service: ProductoService
+    , public catservice: CategoriaService) {
+    super(dialog,_snackBar,router,route);
+  }
 
   ngOnInit(): void {
     this.producto = new Producto();
     this.producto = this.service.producto;
     this.catservice.getCategorias().subscribe(data => {
       this.categorias = data;
-    });
-  }
-
-  openSnackBar(mensaje: string) {
-    this._snackBar.open(mensaje, 'OK', {
-      duration: 1000,
-      horizontalPosition: "center",
-      verticalPosition: "top",
     });
   }
 

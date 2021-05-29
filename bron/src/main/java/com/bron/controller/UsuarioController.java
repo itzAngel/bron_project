@@ -28,6 +28,12 @@ public class UsuarioController {
 	public List<Usuario> listar(){
 		return service.listarUsuario();
 	}
+	
+	@GetMapping("/login/{user}/{pass}")
+	public Usuario auth(@PathVariable("user")String user,@PathVariable("pass")String pass){
+		return service.auth(user,pass);
+	}
+	
 	@PostMapping
 	public Usuario agregar(@RequestBody Usuario p) {
 		return service.addUsuario(p);

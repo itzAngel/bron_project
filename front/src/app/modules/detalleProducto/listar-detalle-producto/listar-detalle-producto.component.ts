@@ -4,31 +4,26 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DetalleProducto } from 'src/app/models/detalle-producto';
 import { DetalleProductoService } from 'src/app/services/detalle-producto.service';
+import { ProductoService } from 'src/app/services/producto.service';
+import { BaseComponent } from 'src/app/shared/base/base/base.component';
 
 @Component({
   selector: 'app-listar-detalle-producto',
   templateUrl: './listar-detalle-producto.component.html',
   styleUrls: ['./listar-detalle-producto.component.css']
 })
-export class ListarDetalleProductoComponent implements OnInit {
+export class ListarDetalleProductoComponent extends BaseComponent implements OnInit {
 
   detalleProducto: DetalleProducto = new DetalleProducto();
   detalleProductos: DetalleProducto[] = [];
 
-  constructor(public dialog: MatDialog, public service: DetalleProductoService,
-    private _snackBar: MatSnackBar,private router:Router, public route: ActivatedRoute) { }
-
+  constructor(public service: DetalleProductoService, public productoservice: ProductoService,public dialog: MatDialog, public _snackBar: MatSnackBar,
+    public router:Router, public route: ActivatedRoute) {
+    super(dialog,_snackBar,router,route);
+  }
   ngOnInit(): void {
     this.service.getDetalleProductos().subscribe(data => {
       this.detalleProductos = data;
-    });
-  }
-  
-  openSnackBar(mensaje: string) {
-    this._snackBar.open(mensaje, 'OK', {
-      duration: 1000,
-      horizontalPosition: "center",
-      verticalPosition: "top",
     });
   }
   

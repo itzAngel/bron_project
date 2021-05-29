@@ -4,29 +4,23 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { BaseComponent } from 'src/app/shared/base/base/base.component';
 
 @Component({
   selector: 'app-add-usuario',
   templateUrl: './add-usuario.component.html',
   styleUrls: ['./add-usuario.component.css']
 })
-export class AddUsuarioComponent implements OnInit {
+export class AddUsuarioComponent extends BaseComponent implements OnInit {
 
   usuario: Usuario = new Usuario();
   usuarios: Usuario[] = [];
 
-  constructor(public dialog: MatDialog, public service: UsuarioService, private _snackBar: MatSnackBar,
-    public router:Router, public route: ActivatedRoute) { }
-
-  ngOnInit(): void {
+  constructor(public dialog: MatDialog, public _snackBar: MatSnackBar,
+    public router:Router, public route: ActivatedRoute, public service: UsuarioService) {
+    super(dialog,_snackBar,router,route);
   }
-
-  openSnackBar(mensaje: string) {
-    this._snackBar.open(mensaje, 'OK', {
-      duration: 1000,
-      horizontalPosition: "center",
-      verticalPosition: "top",
-    });
+  ngOnInit(): void {
   }
 
   limpiar() {

@@ -4,30 +4,25 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/models/categoria';
 import { CategoriaService } from 'src/app/services/categoria.service';
+import { BaseComponent } from 'src/app/shared/base/base/base.component';
 
 @Component({
   selector: 'app-add-categoria',
   templateUrl: './add-categoria.component.html',
   styleUrls: ['./add-categoria.component.css']
 })
-export class AddCategoriaComponent implements OnInit {
+export class AddCategoriaComponent extends BaseComponent implements OnInit {
 
   categoria: Categoria = new Categoria();
   categorias: Categoria[] = [];
 
-  constructor(public dialog: MatDialog, public service: CategoriaService, private _snackBar: MatSnackBar,
-    public router:Router, public route: ActivatedRoute) { }
+  constructor(public service: CategoriaService,public dialog: MatDialog, public _snackBar: MatSnackBar,
+    public router:Router, public route: ActivatedRoute) {
+    super(dialog,_snackBar,router,route);
+  }
 
   ngOnInit(): void {
     this.limpiar();
-  }
-
-  openSnackBar(mensaje: string) {
-    this._snackBar.open(mensaje, 'OK', {
-      duration: 1000,
-      horizontalPosition: "center",
-      verticalPosition: "top",
-    });
   }
 
   limpiar() {

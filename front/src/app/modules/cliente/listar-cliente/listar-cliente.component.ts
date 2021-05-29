@@ -4,31 +4,25 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
+import { BaseComponent } from 'src/app/shared/base/base/base.component';
 
 @Component({
   selector: 'app-listar-cliente',
   templateUrl: './listar-cliente.component.html',
   styleUrls: ['./listar-cliente.component.css']
 })
-export class ListarClienteComponent implements OnInit {
+export class ListarClienteComponent extends BaseComponent implements OnInit {
 
   cliente: Cliente = new Cliente();
   clientes: Cliente[] = [];
 
-  constructor(public dialog: MatDialog, public service: ClienteService,
-    private _snackBar: MatSnackBar,private router:Router, public route: ActivatedRoute) { }
-
+  constructor(public service: ClienteService,public dialog: MatDialog, public _snackBar: MatSnackBar,
+    public router:Router, public route: ActivatedRoute) {
+    super(dialog,_snackBar,router,route);
+  }
   ngOnInit(): void {
     this.service.getClientes().subscribe(data => {
       this.clientes = data;
-    });
-  }
-  
-  openSnackBar(mensaje: string) {
-    this._snackBar.open(mensaje, 'OK', {
-      duration: 1000,
-      horizontalPosition: "center",
-      verticalPosition: "top",
     });
   }
   

@@ -19,6 +19,7 @@ import { ListarProductoComponent } from './modules/producto/listar-producto/list
 import { AddUsuarioComponent } from './modules/usuario/add-usuario/add-usuario.component';
 import { EditUsuarioComponent } from './modules/usuario/edit-usuario/edit-usuario.component';
 import { ListarUsuarioComponent } from './modules/usuario/listar-usuario/listar-usuario.component';
+import { LoginComponent } from './security/login/login.component';
 import { DashboardComponent } from './shared/dashboard/dashboard.component';
 
 const routes: Routes = [
@@ -28,7 +29,6 @@ const routes: Routes = [
         {path: 'home',component: HomeComponent},
         {path: 'dashboard',component: DashboardComponent, 
             children: [
-              {path: '',component: ListarProductoComponent},
               {path: 'addCategoria',component: AddCategoriaComponent},
               {path: 'listarCategoria',component: ListarCategoriaComponent},
               {path: 'editCategoria',component: EditCategoriaComponent},
@@ -48,6 +48,7 @@ const routes: Routes = [
               {path: 'listarImagen',component: ListarImagenComponent},
             ]
         },
+        {path: 'login', component: LoginComponent },
     ]
   },
 ];

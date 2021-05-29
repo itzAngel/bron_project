@@ -5,31 +5,25 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
+import { BaseComponent } from 'src/app/shared/base/base/base.component';
 
 @Component({
   selector: 'app-edit-cliente',
   templateUrl: './edit-cliente.component.html',
   styleUrls: ['./edit-cliente.component.css']
 })
-export class EditClienteComponent implements OnInit {
+export class EditClienteComponent extends BaseComponent implements OnInit {
 
   cliente: Cliente = new Cliente();
   clientes: Cliente[] = [];
 
-  constructor(public dialog: MatDialog, public service: ClienteService,  private http: HttpClient,
-    private _snackBar: MatSnackBar,public router:Router, public route: ActivatedRoute) { }
-
+  constructor(public service: ClienteService,public dialog: MatDialog, public _snackBar: MatSnackBar,
+    public router:Router, public route: ActivatedRoute) {
+    super(dialog,_snackBar,router,route);
+  }
   ngOnInit(): void {
     this.cliente = new Cliente();
     this.cliente = this.service.cliente;
-  }
-
-  openSnackBar(mensaje: string) {
-    this._snackBar.open(mensaje, 'OK', {
-      duration: 1000,
-      horizontalPosition: "center",
-      verticalPosition: "top",
-    });
   }
 
   limpiar() {
