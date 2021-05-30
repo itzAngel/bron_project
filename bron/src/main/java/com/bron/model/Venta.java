@@ -42,6 +42,19 @@ public class Venta implements Serializable{
     @JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente")
     private Cliente cliente;
 	
+	@Column
+	private String direccion;
+	
+	@Column
+	private String nombre_persona_recibe;
+	
+	@Column
+	private String apellido_persona_recibe;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column
+	private Date fecha_entrega;
+	
 	@OneToMany(mappedBy = "venta")
     private List<DetalleVenta> listaDetalleVenta = new ArrayList<>();
 	
@@ -89,5 +102,38 @@ public class Venta implements Serializable{
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getNombre_persona_recibe() {
+		return nombre_persona_recibe;
+	}
+
+	public void setNombre_persona_recibe(String nombre_persona_recibe) {
+		this.nombre_persona_recibe = nombre_persona_recibe;
+	}
+
+	public String getApellido_persona_recibe() {
+		return apellido_persona_recibe;
+	}
+
+	public void setApellido_persona_recibe(String apellido_persona_recibe) {
+		this.apellido_persona_recibe = apellido_persona_recibe;
+	}
+
+	public Date getFecha_entrega() {
+		return fecha_entrega;
+	}
+
+	public void setFecha_entrega(Date fecha_entrega) {
+		this.fecha_entrega = fecha_entrega;
+	}
+	
 	
 }
