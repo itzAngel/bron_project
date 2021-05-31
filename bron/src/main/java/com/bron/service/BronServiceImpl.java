@@ -482,6 +482,18 @@ public class BronServiceImpl implements BronService{
 	}
 	
 	@Override
+	public List<AsignaProductoTienda> getListaAsignaporIdDetalleProducto(int id) {
+		List<AsignaProductoTienda> lista = asignaProductoTiendaRepository.findAll();
+		List<AsignaProductoTienda> resultado = new ArrayList<AsignaProductoTienda>();
+		for(AsignaProductoTienda v : lista) {
+			if(v.getDetalleProducto().getId_detalle_producto() == id) {
+				resultado.add(v);
+			}
+		}
+		return resultado;
+	}
+	
+	@Override
 	public AsignaProductoTienda listarIdAsignaProductoTienda(int id) {
 		return asignaProductoTiendaRepository.findById(id);
 	}

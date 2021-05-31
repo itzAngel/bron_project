@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `bron`.`asigna_producto_tienda` (
     FOREIGN KEY (`id_tienda`)
     REFERENCES `bron`.`tienda` (`id_tienda`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 5
+AUTO_INCREMENT = 6
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -159,13 +159,19 @@ CREATE TABLE IF NOT EXISTS `bron`.`venta` (
   `precio_total` DECIMAL(10,2) NULL DEFAULT NULL,
   `fecha_venta` DATETIME NULL DEFAULT NULL,
   `id_cliente` INT NULL DEFAULT NULL,
+  `direccion` VARCHAR(150) NULL DEFAULT NULL,
+  `nombre_persona_recibe` VARCHAR(45) NULL DEFAULT NULL,
+  `apellido_persona_recibe` VARCHAR(45) NULL DEFAULT NULL,
+  `fecha_entrega` DATETIME NULL DEFAULT NULL,
+  `metodo_pago` VARCHAR(45) NULL DEFAULT NULL,
+  `comprobante_pago` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`id_venta`),
   INDEX `fk_venta_cliente1_idx` (`id_cliente` ASC) VISIBLE,
   CONSTRAINT `fk_venta_cliente1`
     FOREIGN KEY (`id_cliente`)
     REFERENCES `bron`.`cliente` (`id_cliente`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 4
+AUTO_INCREMENT = 6
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -189,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `bron`.`detalle_venta` (
     FOREIGN KEY (`id_venta`)
     REFERENCES `bron`.`venta` (`id_venta`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 14
+AUTO_INCREMENT = 17
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 

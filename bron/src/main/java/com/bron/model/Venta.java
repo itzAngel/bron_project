@@ -55,6 +55,12 @@ public class Venta implements Serializable{
 	@Column
 	private Date fecha_entrega;
 	
+	@Column
+	private String metodo_pago;
+	
+	@Column
+	private String comprobante_pago;
+	
 	@OneToMany(mappedBy = "venta")
     private List<DetalleVenta> listaDetalleVenta = new ArrayList<>();
 	
@@ -133,6 +139,22 @@ public class Venta implements Serializable{
 
 	public void setFecha_entrega(Date fecha_entrega) {
 		this.fecha_entrega = fecha_entrega;
+	}
+
+	public String getMetodo_pago() {
+		return metodo_pago;
+	}
+
+	public void setMetodo_pago(String metodo_pago) {
+		this.metodo_pago = metodo_pago;
+	}
+
+	public String getComprobante_pago() {
+		return comprobante_pago;
+	}
+
+	public void setComprobante_pago(String comprobante_pago) {
+		this.comprobante_pago = comprobante_pago;
 	}
 	
 	

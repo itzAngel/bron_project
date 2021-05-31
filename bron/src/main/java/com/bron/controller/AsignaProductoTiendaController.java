@@ -32,6 +32,10 @@ public class AsignaProductoTiendaController {
 	public List<AsignaProductoTienda> obtenerlistaporid(@PathVariable("id")int id){
 		return service.getListaporIdTienda(id);
 	}
+	@GetMapping("/obtenerlistaporidDetalleProducto/{id}")
+	public List<AsignaProductoTienda> obtenerlistaporidDetalleProducto(@PathVariable("id")int id){
+		return service.getListaAsignaporIdDetalleProducto(id);
+	}
 	@PostMapping
 	public AsignaProductoTienda agregar(@RequestBody AsignaProductoTienda p) {
 		return service.addAsignaProductoTienda(p);

@@ -139,6 +139,8 @@ public interface BronService {
 	List<AsignaProductoTienda> listarAsignaProductoTienda();
 	
 	List<AsignaProductoTienda> getListaporIdTienda(int id);
+	
+	List<AsignaProductoTienda> getListaAsignaporIdDetalleProducto(int id);
 
 	AsignaProductoTienda listarIdAsignaProductoTienda(int id);
 
