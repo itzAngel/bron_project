@@ -222,17 +222,15 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `bron`.`queja`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bron`.`queja` (
-  `idqueja` INT NOT NULL,
-  `queja` VARCHAR(150) NULL,
-  `fecha` DATETIME NULL,
-  `venta_id_venta` INT NOT NULL,
-  PRIMARY KEY (`idqueja`),
-  INDEX `fk_queja_venta1_idx` (`venta_id_venta` ASC) VISIBLE,
+  `id_queja` INT NOT NULL AUTO_INCREMENT,
+  `queja` VARCHAR(150) NULL DEFAULT NULL,
+  `fecha` DATETIME NULL DEFAULT NULL,
+  `id_venta` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id_queja`),
+  INDEX `fk_queja_venta1_idx` (`id_venta` ASC) VISIBLE,
   CONSTRAINT `fk_queja_venta1`
-    FOREIGN KEY (`venta_id_venta`)
-    REFERENCES `bron`.`venta` (`id_venta`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    FOREIGN KEY (`id_venta`)
+    REFERENCES `bron`.`venta` (`id_venta`))
 ENGINE = InnoDB;
 
 
@@ -240,11 +238,11 @@ ENGINE = InnoDB;
 -- Table `bron`.`contacto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bron`.`contacto` (
-  `idcontacto` INT NOT NULL,
-  `nombre` VARCHAR(45) NULL,
-  `correo` VARCHAR(45) NULL,
-  `mensaje` VARCHAR(45) NULL,
-  PRIMARY KEY (`idcontacto`))
+  `id_contacto` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NULL DEFAULT NULL,
+  `correo` VARCHAR(45) NULL DEFAULT NULL,
+  `mensaje` VARCHAR(150) NULL DEFAULT NULL,
+  PRIMARY KEY (`id_contacto`))
 ENGINE = InnoDB;
 
 
