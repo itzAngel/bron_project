@@ -218,6 +218,35 @@ AUTO_INCREMENT = 19
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
+-- -----------------------------------------------------
+-- Table `bron`.`queja`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bron`.`queja` (
+  `idqueja` INT NOT NULL,
+  `queja` VARCHAR(150) NULL,
+  `fecha` DATETIME NULL,
+  `venta_id_venta` INT NOT NULL,
+  PRIMARY KEY (`idqueja`),
+  INDEX `fk_queja_venta1_idx` (`venta_id_venta` ASC) VISIBLE,
+  CONSTRAINT `fk_queja_venta1`
+    FOREIGN KEY (`venta_id_venta`)
+    REFERENCES `bron`.`venta` (`id_venta`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bron`.`contacto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bron`.`contacto` (
+  `idcontacto` INT NOT NULL,
+  `nombre` VARCHAR(45) NULL,
+  `correo` VARCHAR(45) NULL,
+  `mensaje` VARCHAR(45) NULL,
+  PRIMARY KEY (`idcontacto`))
+ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
