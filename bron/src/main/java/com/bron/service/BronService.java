@@ -5,10 +5,12 @@ import java.util.List;
 import com.bron.model.AsignaProductoTienda;
 import com.bron.model.Categoria;
 import com.bron.model.Cliente;
+import com.bron.model.Contacto;
 import com.bron.model.DetalleProducto;
 import com.bron.model.DetalleVenta;
 import com.bron.model.Imagen;
 import com.bron.model.Producto;
+import com.bron.model.Queja;
 import com.bron.model.Tienda;
 import com.bron.model.Usuario;
 import com.bron.model.Venta;
@@ -149,5 +151,29 @@ public interface BronService {
 	AsignaProductoTienda editAsignaProductoTienda(AsignaProductoTienda u);
 
 	AsignaProductoTienda deleteAsignaProductoTienda(int id);
+	
+	
+	
+	/* Queja */
+	List<Queja> listarQueja();
 
+	Queja listarIdQueja(int id);
+
+	Queja addQueja(Queja u);
+	
+	Queja editQueja(Queja u);
+
+	Queja deleteQueja(int id);
+	
+	
+	/* Contacto */
+	List<Contacto> listarContacto();
+
+	Contacto listarIdContacto(int id);
+
+	Contacto addContacto(Contacto u);
+	
+	Contacto editContacto(Contacto u);
+
+	Contacto deleteContacto(int id);
 }

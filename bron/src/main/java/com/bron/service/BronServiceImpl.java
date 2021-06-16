@@ -9,20 +9,24 @@ import org.springframework.stereotype.Service;
 import com.bron.dao.AsignaProductoTiendaRepository;
 import com.bron.dao.CategoriaRepository;
 import com.bron.dao.ClienteRepository;
+import com.bron.dao.ContactoRepository;
 import com.bron.dao.DetalleProductoRepository;
 import com.bron.dao.DetalleVentaRepository;
 import com.bron.dao.ImagenRepository;
 import com.bron.dao.ProductoRepository;
+import com.bron.dao.QuejaRepository;
 import com.bron.dao.TiendaRepository;
 import com.bron.dao.UsuarioRepository;
 import com.bron.dao.VentaRepository;
 import com.bron.model.AsignaProductoTienda;
 import com.bron.model.Categoria;
 import com.bron.model.Cliente;
+import com.bron.model.Contacto;
 import com.bron.model.DetalleProducto;
 import com.bron.model.DetalleVenta;
 import com.bron.model.Imagen;
 import com.bron.model.Producto;
+import com.bron.model.Queja;
 import com.bron.model.Tienda;
 import com.bron.model.Usuario;
 import com.bron.model.Venta;
@@ -60,6 +64,12 @@ public class BronServiceImpl implements BronService{
 	
 	@Autowired
 	private AsignaProductoTiendaRepository asignaProductoTiendaRepository;
+	
+	@Autowired
+	private QuejaRepository quejaRepository;
+	
+	@Autowired
+	private ContactoRepository contactoRepository;
 	/* 
 	 * 
 	 * Cliente 
@@ -515,4 +525,73 @@ public class BronServiceImpl implements BronService{
 		return a;
 	}
 	
+	
+	/* 
+	 * 
+	 * Queja 
+	 * 
+	 * */
+	
+	
+	@Override
+	public List<Queja> listarQueja() {
+		return quejaRepository.findAll();
+	}
+	
+	@Override
+	public Queja listarIdQueja(int id) {
+		return quejaRepository.findById(id);
+	}
+	
+	@Override
+	public Queja addQueja(Queja u) {
+		return quejaRepository.save(u);
+	}
+	
+	@Override
+	public Queja editQueja(Queja u) {
+		return quejaRepository.save(u);
+	}
+
+	@Override
+	public Queja deleteQueja(int id) {
+		Queja a = listarIdQueja(id);
+		quejaRepository.delete(a);
+		return a;
+	}
+	
+	
+	/* 
+	 * 
+	 * Contacto 
+	 * 
+	 * */
+	
+	
+	@Override
+	public List<Contacto> listarContacto() {
+		return contactoRepository.findAll();
+	}
+	
+	@Override
+	public Contacto listarIdContacto(int id) {
+		return contactoRepository.findById(id);
+	}
+	
+	@Override
+	public Contacto addContacto(Contacto u) {
+		return contactoRepository.save(u);
+	}
+	
+	@Override
+	public Contacto editContacto(Contacto u) {
+		return contactoRepository.save(u);
+	}
+
+	@Override
+	public Contacto deleteContacto(int id) {
+		Contacto a = listarIdContacto(id);
+		contactoRepository.delete(a);
+		return a;
+	}
 }

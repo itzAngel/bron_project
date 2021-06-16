@@ -36,6 +36,8 @@ public class Cliente implements Serializable{
 	private String direccion;
 	@Column
 	private String contrasena;
+	@Column
+	private String correo;
 
 	public Cliente() {
 		super();
@@ -129,6 +131,14 @@ public class Cliente implements Serializable{
 
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
     
 	
